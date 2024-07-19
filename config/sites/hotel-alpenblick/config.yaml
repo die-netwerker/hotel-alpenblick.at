@@ -1,0 +1,14 @@
+base: /
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    locale: de_AT
+    hreflang: de
+    base: /
+    websiteTitle: ''
+    navigationTitle: Deutsch
+    flag: de
+    languageId: 0
+rootPageId: 1
+websiteTitle: 'Hotel Alpenblick'
