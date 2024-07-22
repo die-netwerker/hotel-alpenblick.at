@@ -1,0 +1,26 @@
+{
+    "name": "netwerk/nw_template",
+    "type": "typo3-cms-extension",
+    "description": "Sitepackage",
+    "require": {
+        "typo3/cms-core": "^12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netwerk\\NwTemplate\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+       "psr-4": {
+          "Netwerk\\NwTemplate\\Tests\\": "Tests/"
+       }
+    },
+    "replace": {
+       "netwerk/nw-template": "self.version"
+    },
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "nw_template"
+		}
+	}
+}

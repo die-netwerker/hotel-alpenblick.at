@@ -6,14 +6,17 @@
 	"config": {
 		"allow-plugins": {
 			"typo3/class-alias-loader": true,
-			"typo3/cms-composer-installers": true
+			"typo3/cms-composer-installers": true,
+			"helhum/dotenv-connector": true
 		},
 		"platform": {
-			"php": "8.1.1"
+			"php": "8.3"
 		},
 		"sort-packages": true
 	},
 	"require": {
+		"lochmueller/staticfilecache": "^14.0",
+		"netwerk/live": "^12.0",
 		"typo3/cms-backend": "^12.4.0",
 		"typo3/cms-belog": "^12.4.0",
 		"typo3/cms-beuser": "^12.4.0",
@@ -39,5 +42,11 @@
 		"typo3/cms-tstemplate": "^12.4.0",
 		"typo3/cms-viewpage": "^12.4.0",
 		"typo3/cms-webhooks": "^12.4.0"
+	},
+	"repositories": [
+		{ "type": "path", "url": "extensions/*" }
+	 ],	 
+	"require-dev": {
+		"netwerk/dev": "^12.0"
 	}
 }

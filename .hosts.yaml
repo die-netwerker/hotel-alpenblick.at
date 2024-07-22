@@ -1,0 +1,15 @@
+config:
+  repository: https://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@github.com/die-netwerker/hotel-alpenblick.at.git
+hosts:
+  main:
+    hostname: 'p673995.webspaceconfig.de'
+    remote_user: 'p673995'
+    port: 22
+    deploy_path: '~/html/typo3-main'
+    branch: main
+  staging:
+    hostname: 'p673995.webspaceconfig.de'
+    remote_user: 'p673995'
+    port: 22
+    deploy_path: '~/html/typo3-staging'
+    branch: staging
