@@ -1,0 +1,9 @@
+options {
+    pageTree {
+        showPageIdWithTitle = 1
+    }
+    clearCache {
+        all = 1
+        pages = 1
+    }
+}

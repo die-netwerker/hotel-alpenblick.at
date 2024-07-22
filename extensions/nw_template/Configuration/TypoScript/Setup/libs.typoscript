@@ -1,0 +1,29 @@
+lib {
+  ### inline svg
+  inline_svg = SVG
+  inline_svg {
+    renderMode = inline
+    src.field = src
+  }
+  ### phonelink
+  phone_link = TEXT
+  phone_link {
+    current = 1
+    stdWrap {
+      replacement {
+        10 {
+          search = +
+          replace = 00
+        }
+        20 {
+          search = -
+          replace =
+        }
+        30 {
+          search.char = 32
+          replace =
+        }
+      }
+    }
+  }
+}

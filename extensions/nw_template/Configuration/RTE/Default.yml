@@ -1,0 +1,36 @@
+# Import basic configuration
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    toolbar:
+      items:
+        - bold
+        - italic
+        - '|'
+        - subscript
+        - superscript
+        - '|'
+        - numberedList
+        - bulletedList
+        - '|'
+        - alignment
+        - '|'
+        - findAndReplace
+        - link
+        - sourceEditing
+
+
+### line break
+  # - '-'
+### clipboard, removeFormat, undo, redo, find, selectAll, link, horizontalLine, bold, italic, underline, strikethrough, subscript, superscript, softhyphen, bulletedList, numberedList, alignment, style, sourceEditing
+
+###alignment:
+###      options:
+###        - { name: 'left', className: 'text-left' }
+###        - { name: 'center', className: 'text-center' }
+###        - { name: 'right', className: 'text-right' }
+###        - { name: 'justify', className: 'text-justify' }

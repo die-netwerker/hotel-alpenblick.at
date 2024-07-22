@@ -1,0 +1,16 @@
+### all content blocks
+lib {
+  contentBlock {
+    #layoutRootPaths {
+    #  100 = EXT:nw_template/Resources/Private/Layouts/ContentElements/
+    #}
+    partialRootPaths {
+      100 = EXT:nw_template/Resources/Private/Partials/ContentElements/
+    }
+    settings {
+      linktitle = {$name}
+      request_uid = {$request_uid}
+      instagram = {$instagram}
+    }
+  }
+}

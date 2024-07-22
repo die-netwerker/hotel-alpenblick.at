@@ -2,6 +2,7 @@
     "name": "netwerk/nw_template",
     "type": "typo3-cms-extension",
     "description": "Sitepackage",
+    "version": "1.0.0",
     "require": {
         "typo3/cms-core": "^12.4"
     },

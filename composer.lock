@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e78c707952b2d88950c730f0f131bd8c",
+    "content-hash": "9f19f8f7da1ee5a51e00a3fb34839d42",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -118,6 +118,63 @@
                 "source": "https://github.com/ChristianRiesen/base32/tree/1.6.0"
             },
             "time": "2021-02-26T10:19:33+00:00"
+        },
+        {
+            "name": "clickstorm/cs-seo",
+            "version": "8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clickstorm/cs_seo.git",
+                "reference": "3cca98357b5de0b755741ca965c0ea44fb194d80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clickstorm/cs_seo/zipball/3cca98357b5de0b755741ca965c0ea44fb194d80",
+                "reference": "3cca98357b5de0b755741ca965c0ea44fb194d80",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "typo3/cms-core": "^12.2",
+                "typo3/cms-seo": "^12.2"
+            },
+            "replace": {
+                "clickstorm/cs_seo": "self.version",
+                "typo3-ter/cs-seo": "self.version"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "*",
+                "typo3/coding-standards": "*",
+                "typo3/testing-framework": "*"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "cs_seo"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Clickstorm\\CsSeo\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "[clickstorm] SEO - Extension for TYPO3. Enables important onpage features for search engine optimization (SEO). Expands the page settings and any desired records for example with a preview for Google search results (SERP) Structured Data (JSON-LD) and a Focus Keyword. Restrictive hreflang and canonical tags. Modules for metadata of records and alternative texts of images. Further features are shown in the extension manual.",
+            "homepage": "https://www.clickstorm.de",
+            "keywords": [
+                "clickstorm",
+                "extension",
+                "seo",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/clickstorm/cs_seo/issues",
+                "source": "https://github.com/clickstorm/cs_seo/tree/8.2.0"
+            },
+            "time": "2024-06-04T14:30:24+00:00"
         },
         {
             "name": "composer/semver",
@@ -254,6 +311,91 @@
                 "source": "https://github.com/consolidation/self-update/tree/2.1.0"
             },
             "time": "2023-02-21T19:33:55+00:00"
+        },
+        {
+            "name": "contentblocks/content-blocks",
+            "version": "0.7.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nhovratov/content-blocks.git",
+                "reference": "bf9a52e3b46e3fb53cfb6d5727ec807dbeb6921f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/bf9a52e3b46e3fb53cfb6d5727ec807dbeb6921f",
+                "reference": "bf9a52e3b46e3fb53cfb6d5727ec807dbeb6921f",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/var-exporter": "^6.4 || ^7.0",
+                "typo3/cms-backend": "^12.4.15",
+                "typo3/cms-core": "^12.4.15",
+                "typo3/cms-fluid": "^12.4.15",
+                "typo3/cms-frontend": "^12.4.15"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "replace": {
+                "typo3/cms-content-blocks": "*"
+            },
+            "require-dev": {
+                "bnf/phpstan-psr-container": "^1.0.1",
+                "contentblocks/examples": "@dev",
+                "friendsofphp/php-cs-fixer": "^3.22",
+                "friendsoftypo3/phpstan-typo3": "^0.9.0",
+                "phpstan/phpstan": "^1.10.22",
+                "phpstan/phpstan-phpunit": "^1.3.13",
+                "typo3/cms-extbase": "^12.4.15",
+                "typo3/cms-extensionmanager": "^12.4.15",
+                "typo3/cms-filelist": "^12.4.15",
+                "typo3/cms-install": "^12.4.15",
+                "typo3/cms-lowlevel": "^12.4.15",
+                "typo3/cms-rte-ckeditor": "^12.4.15",
+                "typo3/cms-tstemplate": "^12.4.15",
+                "typo3/cms-workspaces": "^12.4.15",
+                "typo3/coding-standards": "^0.7",
+                "typo3/testing-framework": "^8.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "13.0.x-dev"
+                },
+                "typo3/cms": {
+                    "web-dir": ".Build/public",
+                    "extension-key": "content_blocks",
+                    "Package": {
+                        "serviceProvider": "TYPO3\\CMS\\ContentBlocks\\ServiceProvider",
+                        "partOfFactoryDefault": false
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\ContentBlocks\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Content Types Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 CMS Content Blocks - Content Types API",
+            "homepage": "https://typo3.org",
+            "support": {
+                "chat": "https://typo3.org/help",
+                "docs": "https://docs.typo3.org/p/contentblocks/content-blocks/main/en-us/",
+                "issues": "https://forge.typo3.org",
+                "source": "https://github.com/typo3/typo3"
+            },
+            "time": "2024-07-11T15:50:01+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -2140,6 +2282,41 @@
                 "source": "https://github.com/die-netwerker/live/tree/v12.0.0"
             },
             "time": "2024-07-04T14:20:12+00:00"
+        },
+        {
+            "name": "netwerk/nw_template",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "extensions/nw_template",
+                "reference": "a834f513bac82dd6ad4e6da75c6d920d6a32e44e"
+            },
+            "require": {
+                "typo3/cms-core": "^12.4"
+            },
+            "replace": {
+                "netwerk/nw-template": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "nw_template"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Netwerk\\NwTemplate\\": "Classes/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Netwerk\\NwTemplate\\Tests\\": "Tests/"
+                }
+            },
+            "description": "Sitepackage",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nikic/php-parser",

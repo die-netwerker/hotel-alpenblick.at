@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<ul class="navigation">
+		<f:for each="{navigation}" as="menu" iteration="iterator">
+			<li class="{f:if(condition:'{menu.active}', then:'menulink-open')}">
+				<f:if condition="{menu.children}">
+					<f:then>
+						<span class="menulink menulink-{menu.data.uid}">{menu.title}</span>
+						<ul class="submenu">
+							<f:for each="{menu.children}" as="children">
+								<li><a href="{children.link}" class="menu-sublink menu-sublink-{menu.data.uid}{f:if(condition:'{children.active}', then:' active')}"{f:if(condition:'{children.target}', then:' target="{children.target}"')} title="{settings.linktitle} - {children.title}">{children.title}</a></li>
+							</f:for>
+						</ul>
+					</f:then>
+					<f:else><a href="{menu.link}" title="{settings.linktitle} - {menu.title}" class="menulink menulink-{menu.data.uid}{f:if(condition:'{menu.active}', then:' active')}">{menu.title}</a></f:else>
+				</f:if>
+			</li>
+		</f:for>
+	</ul>
+</html>
