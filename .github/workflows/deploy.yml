@@ -1,0 +1,43 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+concurrency: production_environment
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+
+      - name: Install dependencies
+        run: composer install --no-dev --no-ansi --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs
+
+      - name: Deploy to Main
+        if: github.ref == 'refs/heads/main'
+        uses: deployphp/action@v1
+        with:
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          dep: deploy main
+          deployer-version: "7.3.0"
+          verbosity: -v
+
+      - name: Deploy to Staging
+        if: github.ref == 'refs/heads/staging'
+        uses: deployphp/action@v1
+        with:
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          dep: deploy staging
+          deployer-version: "7.3.0"
+          verbosity: -vvv
