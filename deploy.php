@@ -23,7 +23,7 @@ add('shared_files', ['.env']);
 /**
  * TYPO3 tasks
  */
-desc('Flush all caches');
+/*desc('Flush all caches');
 task('typo3:cache_flush', function () {
     run('{{bin/typo3}} cache:flush');
 });
@@ -55,7 +55,7 @@ desc('Execute update referenceindex');
 task('typo3:update_referenceindex', function () {
     run('{{bin/typo3}} referenceindex:update');
 });
-
+*/
 /**
  * Deployment
  */
@@ -63,7 +63,7 @@ desc('Deploys your project');
 task('deploy', [
     'deploy:prepare',
     'deploy:vendors',
-    'typo3:fix_folder_structure',
+    /*'typo3:fix_folder_structure',
     'typo3:language_update',
     'deploy:symlink',
     'typo3:extension_setup',
@@ -71,7 +71,7 @@ task('deploy', [
     'typo3:upgrade_all',
     'typo3:cache_flush',
     'typo3:cache_warmup',
-    'typo3:update_referenceindex',
+    'typo3:update_referenceindex',*/
     'deploy:unlock',
     'deploy:cleanup',
     'deploy:success',

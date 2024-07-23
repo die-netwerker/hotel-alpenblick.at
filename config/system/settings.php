@@ -12,12 +12,12 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8',
-                'dbname' => false,
                 'driver' => 'mysqli',
-                'host' => false,
-                'password' => false,
                 'port' => '3306',
-                'user' => false,
+                'dbname' => getenv('TYPO3_DB_NAME'),
+                'host' => getenv('TYPO3_DB_HOST'),
+                'password' => getenv('TYPO3_DB_PASSWORD'),
+                'user' => getenv('TYPO3_DB_USER'),
             ],
         ],
     ],
