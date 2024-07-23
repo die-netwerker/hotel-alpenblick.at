@@ -64,9 +64,9 @@ task('deploy', [
     'deploy:prepare',
     'deploy:vendors',
     /*'typo3:fix_folder_structure',
-    'typo3:language_update',
+    'typo3:language_update',*/
     'deploy:symlink',
-    'typo3:extension_setup',
+    /*'typo3:extension_setup',
     'typo3:update_database',
     'typo3:upgrade_all',
     'typo3:cache_flush',
