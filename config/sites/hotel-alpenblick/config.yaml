@@ -24,5 +24,13 @@ languages:
     flag: en-us-gb
     languageId: 1
 rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: /
+    index: ''
+    map:
+      /: 0
+      sitemap.xml: 1533906435
 txCsseoXdefault: 0
 websiteTitle: 'Hotel Alpenblick'

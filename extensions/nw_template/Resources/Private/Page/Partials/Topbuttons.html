@@ -9,7 +9,7 @@
         </f:if>
 		<f:if condition="{settings.book_uid}">
             <li>
-                <f:link.page pageUid="{settings.request_uid}" title="{settings.linktitle} - {f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:book_now') -> f:format.raw()}">
+                <f:link.page pageUid="{settings.book_uid}" title="{settings.linktitle} - {f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:book_now') -> f:format.raw()}">
                     {f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:book_now') -> f:format.raw()}
                 </f:link.page>
             </li>

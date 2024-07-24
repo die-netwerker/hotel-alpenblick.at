@@ -171,6 +171,7 @@ page {
       request_uid = {$request_uid}
       book_uid = {$book_uid}
       imagegallery_uid = {$imagegallery_uid}
+      insider_uid = {$insider_uid}
 
       name = {$name}
       owner = {$owner}
