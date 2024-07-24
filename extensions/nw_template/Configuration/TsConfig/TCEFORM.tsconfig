@@ -44,17 +44,19 @@ TCEFORM {
 
     ### spaces
     space_before_class {
-      removeItems = extra-small, large, extra-large
+      removeItems = extra-small, extra-large
       altLabels {
         small = klein
         medium = mittel
+        large = groß
       }
     }
     space_after_class {
-      removeItems = extra-small, large, extra-large
+      removeItems = extra-small, extra-large
       altLabels {
         small = klein
         medium = mittel
+        large = groß
       }
     }
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-09-08T12:46:21Z" product-name="page">
+		<header/>
+		<body>
+			<!-- basics -->
+			<trans-unit id="cdata">
+				<source><![CDATA[...]]></source>
+				<target><![CDATA[...]]></target>
+			</trans-unit>
+			<trans-unit id="request">
+				<source>Request</source>
+				<target>Anfragen</target>
+			</trans-unit>
+			<trans-unit id="request_now">
+				<source>Request now</source>
+				<target>Jetzt anfragen</target>
+			</trans-unit>
+			<trans-unit id="book">
+				<source>Book</source>
+				<target>Buchen</target>
+			</trans-unit>
+			<trans-unit id="book_now">
+				<source>Book now</source>
+				<target>Jetzt buchen</target>
+			</trans-unit>
+			<trans-unit id="book_now_nl2br">
+				<source><![CDATA[Book<br />now]]></source>
+				<target><![CDATA[Jetzt<br />buchen]]></target>
+			</trans-unit>
+			<trans-unit id="write_us">
+				<source>Write us an e-mail</source>
+				<target>Schreiben Sie uns eine E-Mail</target>
+			</trans-unit>
+			<trans-unit id="call_us">
+				<source>Call us</source>
+				<target>Rufen Sie uns an</target>
+			</trans-unit>
+			<trans-unit id="menu_card">
+				<source>Menu card</source>
+				<target>Speisekarte</target>
+			</trans-unit>
+			<trans-unit id="imagegallery">
+				<source>Image gallery</source>
+				<target>Bildergalerie</target>
+			</trans-unit>
+			<trans-unit id="more">
+				<source>More</source>
+				<target>Mehr</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

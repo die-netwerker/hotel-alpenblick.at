@@ -1,19 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <div class="address">
-        <p>
-            {settings.owner}<br/>
-            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                <span itemprop="streetAddress">{settings.street}</span><br/>
-                A-<span itemprop="postalCode">{settings.postcode}</span> <span itemprop="addressLocality">{settings.city}</span>, <span itemprop="addressRegion">{settings.region}</span>
-                <meta itemprop="addressCountry" content="{settings.country}">
-            </span>
-        </p>
-        <p>
-            <a href="tel:{settings.phonelink}" title="{settings.linktitle} - {f:translate(key:'LLL:EXT:netwerk_typo3/Resources/Private/Languages/lang.xlf:call_us')}"><strong>T</strong> <span itemprop="telephone">{settings.phone}</span></a>
-            <br/><a href="mailto:{settings.email}" title="{settings.linktitle} - {f:translate(key:'LLL:EXT:netwerk_typo3/Resources/Private/Languages/lang.xlf:write_us')}"><strong>E</strong> <span itemprop="email">{settings.email}</span></a>
-        </p>
-    </div>
-    <meta itemprop="name" content="{settings.hotelname}" />
+    <p class="address">
+        <span itemprop="name"></span>{settings.name}<br/>
+        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">{settings.street}</span><br/>
+            <span itemprop="postalCode">{settings.postal_code}</span> <span itemprop="addressLocality">{settings.city}</span><br/>
+            <meta itemprop="addressRegion" content="{settings.region}">
+            <meta itemprop="addressCountry" content="{settings.country}">
+        </span>
+        <a href="tel:{settings.phonelink}" title="{settings.linktitle} - {f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:call_us')}">T <span itemprop="telephone">{settings.phone}</span></a>
+        <br/><a href="mailto:{settings.email}" title="{settings.linktitle} - {f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:write_us')}"><span itemprop="email">{settings.email}</span></a>
+    </p>
+    <meta itemprop="owner" content="{settings.owner}" />
     <meta itemprop="priceRange" content="{settings.pricerange}" />
     <meta itemprop="hasMap" content="{settings.hasmap}" />
     <meta itemprop="openingHours" content="{settings.openinghours}" />

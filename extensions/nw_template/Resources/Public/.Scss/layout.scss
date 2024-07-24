@@ -1,0 +1,147 @@
+@use 'base';
+@use 'mixins';
+
+*, html {
+    margin: 0;
+    padding: 0;
+    outline: unset;
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 0;
+    font-family: base.$font_1;
+    color: base.$color_1;
+    background-color: base.$color_2;
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'kern'
+}
+#main {
+    @include mixins.flexbox($f_direction:column, $a_items:center);
+    padding-top: 133px;
+    .frame-space-before-small {
+        padding-top: base.$margin_64
+    }
+    .frame-space-before-medium {
+        padding-top: base.$margin_100
+    }
+    .frame-space-before-large {
+        padding-top: base.$margin_150
+    }
+    .frame-space-after-small {
+        padding-bottom: base.$margin_64
+    }
+    .frame-space-after-medium {
+        padding-bottom: base.$margin_100
+    }
+    .frame-space-after-large {
+        padding-bottom: base.$margin_150
+    }
+}
+#footer {
+    display: grid;
+    grid-template-areas:
+        "logo . links links diversity"
+        "logo . socials socials diversity"
+        "logo . address slogan ."
+        ". . bottom bottom bottom";
+    grid-template-columns: 21% 7% 1fr 1fr auto;
+    background: base.$color_4;
+    padding-top: base.$margin_150;
+    padding-right: 4%;
+    padding-left: 4%;
+    ul {
+        list-style: none;
+    }
+    .footer, .links {
+        p, a {
+            color: base.$color_1;
+            text-decoration: none;
+            font-family: base.$font_2;
+            font-size: base.$fontsize_18;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: 0.9px;
+            text-transform: uppercase;
+        }
+    }
+    .address, .slogan {
+        &, a {
+            color: base.$color_1;
+            font-family: base.$font_1;
+            font-size: base.$fontsize_24;
+            line-height: 1.2;
+            font-weight: 400;
+            text-decoration: none;
+        }
+    }
+    .logo {
+        grid-area: logo;
+        align-self: flex-end;
+        width: 100%;
+        height: auto;
+        fill: base.$color_1
+    }
+    .address {
+        grid-area: address;
+        align-self: flex-end;
+    }
+    .slogan {
+        grid-area: slogan;
+        font-size: base.$fontsize_75;
+    }
+    .diversity {
+        grid-area: diversity;
+        justify-self: flex-end;
+        align-self: flex-end;
+        width: auto;
+        height: 157px;
+    }
+    .links {
+        grid-area: links;
+        li + li {
+            margin-top: 16px;
+        }
+    }
+    .socials {
+        grid-area: socials;
+        margin-top: 16px;
+        display: flex;
+        column-gap: 10px;
+        svg {
+            width: auto;
+            height: 40px;
+            fill: base.$color_1;
+        }
+    }
+    .footer {
+        grid-area: bottom;
+        display: flex;
+        padding-top: base.$margin_40;
+        padding-bottom: base.$margin_40;
+        li {
+            &:not(:first-child) {
+                position: relative;
+                &::before {
+                    content: '/';
+                    color: base.$color_1;
+                    text-decoration: none;
+                    font-family: base.$font_2;
+                    font-size: base.$fontsize_18;
+                    font-weight: 900;
+                    line-height: 1.2;
+                    letter-spacing: 0.9px;
+                    margin-right: 4px;
+                    margin-left: 4px
+                }
+            }
+        }
+    }
+}

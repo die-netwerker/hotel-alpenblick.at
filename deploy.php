@@ -23,7 +23,7 @@ add('shared_files', ['.env']);
 /**
  * TYPO3 tasks
  */
-/*desc('Flush all caches');
+desc('Flush all caches');
 task('typo3:cache_flush', function () {
     run('{{bin/typo3}} cache:flush');
 });
@@ -55,7 +55,6 @@ desc('Execute update referenceindex');
 task('typo3:update_referenceindex', function () {
     run('{{bin/typo3}} referenceindex:update');
 });
-*/
 /**
  * Deployment
  */

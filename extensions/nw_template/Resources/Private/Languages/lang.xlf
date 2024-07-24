@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="en" datatype="plaintext" original="messages" date="2018-09-08T12:46:21Z" product-name="page">
+		<header/>
+		<body>
+			<!-- basics -->
+			<trans-unit id="cdata">
+				<source><![CDATA[...]]></source>
+			</trans-unit>
+			<trans-unit id="request">
+				<source>Request</source>
+			</trans-unit>
+			<trans-unit id="request_now">
+				<source>Request now</source>
+			</trans-unit>
+			<trans-unit id="book">
+				<source>Book</source>
+			</trans-unit>
+			<trans-unit id="book_now">
+				<source>Book now</source>
+			</trans-unit>
+			<trans-unit id="book_now_nl2br">
+				<source><![CDATA[Book<br />now]]></source>
+			</trans-unit>
+			<trans-unit id="write_us">
+				<source>Write us an e-mail</source>
+			</trans-unit>
+			<trans-unit id="call_us">
+				<source>Call us</source>
+			</trans-unit>
+			<trans-unit id="imagegallery">
+				<source>Image gallery</source>
+			</trans-unit>
+			<trans-unit id="more">
+				<source>More</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

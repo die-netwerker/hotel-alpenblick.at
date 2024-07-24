@@ -1,0 +1,50 @@
+@use 'base';
+
+@mixin flexbox($j_content:flex-start, $a_items:center, $f_direction:row, $c_gap:unset, $r_gap:unset, $f_wrap:unset) {
+	display: flex;
+	justify-content: $j_content;
+	align-items: $a_items;
+	column-gap: $c_gap;
+	flex-direction: $f_direction;
+	row-gap: $r_gap;
+	flex-wrap: $f_wrap
+}
+@mixin header($size:base.$fontsize_75, $color:base.$color_1, $line-height:1.2) {
+	font-weight: 400;
+	font-size: $size;
+	font-family: base.$font_1;
+	line-height: $line-height;
+	color: $color
+}
+@mixin text($font_weight:400, $font_size:base.$fontsize_20, $line_height:1.2, $letter_spacing:unset) {
+    font-weight: $font_weight;
+    font-size: $font_size;
+    line-height: $line_height;
+    letter-spacing: $letter_spacing
+}
+@mixin bodytext($font_weight:400, $font_size:base.$fontsize_20, $line_height:1.2, $letter_spacing:unset) {
+    @include text($font_weight, $font_size, $line_height, $letter_spacing);
+    a {
+        color: base.$color_1
+    }
+    & + p, & + ul {
+        margin-top: 1.5em
+    }
+}
+@mixin button($color:base.$color_1, $background_color:transparent, $border_color:base.$color_1, $margin_top:unset) {
+	margin-top: $margin_top;
+	a {
+		display: inline-block;
+		font-weight: 400;
+		font-size: base.$fontsize_20;
+		line-height: 1.2;
+		color: $color;
+		border: 2px solid $border_color;
+		text-transform: uppercase;
+		letter-spacing: .5px;
+		text-decoration: unset;
+		padding: 6px 15px;
+		background-color: $background_color;
+		border-radius: 100px
+	}
+}

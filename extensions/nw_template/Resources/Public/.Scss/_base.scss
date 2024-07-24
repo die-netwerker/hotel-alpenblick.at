@@ -1,0 +1,26 @@
+// colors
+$color_1: #534743;
+$color_2: #E2D6CC;
+$color_3: #AA6A56;
+$color_4: #CEBA9C;
+$color_5: #532617;
+
+// fonts
+$font_1: 'Kalice';
+$font_2: 'DM Sans';
+
+// fontsizes
+$fontsize_18: clamp(16px, 14.8px + 0.2vw, 18px); /* 16 -> 18 */
+$fontsize_20: clamp(18px, 16.8px + 0.2vw, 20px); /* 18 -> 20 */
+$fontsize_24: clamp(20px, 17.6px + 0.4vw, 24px); /* 20 -> 24 */
+$fontsize_40: clamp(30px, 24px + 1vw, 40px); /* 30 -> 40 */
+$fontsize_75: clamp(40px, 19px + 3.5vw, 75px); /* 40 -> 75 */
+$fontsize_170: clamp(60px, -6px + 11vw, 170px); /* 60 -> 170 */
+
+// margins
+$margin_40: clamp(20px, 8px + 2vi, 40px); /* 20 -> 40 */
+$margin_64: clamp(32px, 12.8px + 3.2vi, 64px); /* 32 -> 64 */
+$margin_88: clamp(44px, 17.6px + 4.4vi, 88px); /* 44 -> 88 */
+$margin_100: clamp(50px, 20px + 5vw, 100px); /* 50 -> 100 */
+$margin_128: clamp(64px, 25.6px + 6.4vi, 128px); /* 64 -> 128 */
+$margin_150: clamp(75px, 30px + 7.5vw, 150px); /* 75 -> 150 */

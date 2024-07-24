@@ -1,4 +1,5 @@
 base: /
+disableStaticFileCache: false
 languages:
   -
     title: Deutsch
@@ -10,5 +11,18 @@ languages:
     navigationTitle: Deutsch
     flag: de
     languageId: 0
+  -
+    title: English
+    enabled: true
+    locale: en_US
+    hreflang: en
+    base: /en/
+    websiteTitle: ''
+    navigationTitle: English
+    fallbackType: strict
+    fallbacks: ''
+    flag: en-us-gb
+    languageId: 1
 rootPageId: 1
+txCsseoXdefault: 0
 websiteTitle: 'Hotel Alpenblick'

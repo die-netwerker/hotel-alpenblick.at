@@ -118,25 +118,18 @@ page {
 
     ### dataProcessing
     dataProcessing {
-      #10 = database-query
-      #10 {
-      #  table = tt_content
-      #  orderBy = sorting
-      #  where = colPos=1
-      #  as = hero
-      #}
-      20 = database-query
-      20 {
+      10 = database-query
+      10 {
         table = tt_content
         orderBy = sorting
         where = colPos=0
         as = content
       }
-      #30 = files
-      #30 {
-      #    references.fieldName = media
-      #    as = hero
-      #}
+      20 = language-menu
+      20 {
+        languages = auto
+        as = languages
+      }
       30 = menu
       30 {
         special = list
@@ -177,6 +170,7 @@ page {
       linktitle = {$name}
       request_uid = {$request_uid}
       book_uid = {$book_uid}
+      imagegallery_uid = {$imagegallery_uid}
 
       name = {$name}
       owner = {$owner}
