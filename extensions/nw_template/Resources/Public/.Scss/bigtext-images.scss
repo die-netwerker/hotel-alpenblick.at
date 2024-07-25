@@ -1,0 +1,40 @@
+@use 'base';
+@use 'mixins';
+
+.frame-type-netwerk_bigtextimagesh1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4% 1fr base.$margin_88 1fr base.$margin_88 1fr 4%;
+    grid-template-areas: 
+        ". tl tl tl . i1 ."
+        ". tm tm tm . i1 ."
+        ". i2 . tr tr tr . ";
+    p {
+        &.text-left, &.text-middle, &.text-right {
+            @include mixins.header($size:base.$fontsize_170, $line-height:1.2);
+        }
+        &.text-left {
+            grid-area: tl;
+        }
+        &.text-middle {
+            grid-area: tm;
+            justify-self: flex-end;
+        }
+        &.text-right {
+            grid-area: tr;
+            justify-self: flex-end;
+        }
+    }
+    .image-right {
+        grid-area: i1;
+        height: auto;
+        width: 352px;
+        max-width: 100%;
+    }
+    .image-left {
+        grid-area: i2;
+        height: auto;
+        width: 507px;
+        max-width: 100%;
+    }
+}

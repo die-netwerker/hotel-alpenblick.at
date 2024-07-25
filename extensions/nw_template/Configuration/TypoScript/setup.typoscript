@@ -134,7 +134,7 @@ page {
       30 {
         special = list
         special.value = {$menu_links}
-        levels = 1
+        levels = 2
         includeSpacer = 0
         as = navigation
       }

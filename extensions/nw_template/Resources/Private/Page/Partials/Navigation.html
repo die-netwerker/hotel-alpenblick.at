@@ -1,14 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:debug>{_all}</f:debug>
 	<ul class="navigation">
 		<f:for each="{navigation}" as="menu" iteration="iterator">
-			<li class="{f:if(condition:'{menu.active}', then:'menulink-open')}">
+			<li class="{f:if(condition:'{menu.active}', then:'active')}">
 				<f:if condition="{menu.children}">
 					<f:then>
-						<span class="menulink menulink-{menu.data.uid}">{menu.title}</span>
+						<span class="menulink menulink-{menu.data.uid}"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 118 45"><path d="M95.5,45H22.5C10.1,45,0,34.9,0,22.5S10.1,0,22.5,0h73c12.4,0,22.5,10.1,22.5,22.5s-10.1,22.5-22.5,22.5ZM22.5,2C11.2,2,2,11.2,2,22.5s9.2,20.5,20.5,20.5h73c11.3,0,20.5-9.2,20.5-20.5S106.8,2,95.5,2H22.5Z"/><path d="M86.3,36.2c0-3.7,1.3-7.5,5.5-12.2H21c-2.2,0-1.7,1.6-3.7,1.6s-2.3-1.4-2.3-2.9.8-2.9,2.3-2.9,1.5,1.6,3.7,1.6h70.8c-4.2-4.7-5.5-8.6-5.5-12.2s.2-2,.7-2,.7.6,1.1,1.7c2.5,6,8.3,11.3,14.8,12.3,1.3.2,1.8.8,1.8,1.6s-.5,1.3-1.8,1.6c-6.5,1-12.3,6.3-14.8,12.3-.5,1.1-.7,1.7-1.1,1.7s-.7-.6-.7-2"/></svg> {menu.title}</span>
 						<ul class="submenu">
-							<f:for each="{menu.children}" as="children">
-								<li><a href="{children.link}" class="menu-sublink menu-sublink-{menu.data.uid}{f:if(condition:'{children.active}', then:' active')}"{f:if(condition:'{children.target}', then:' target="{children.target}"')} title="{settings.linktitle} - {children.title}">{children.title}</a></li>
+							<f:for each="{menu.children}" as="children" iteration="iteratorsub">
+								<f:if condition="{iteratorsub.isFirst}">
+									<f:then>
+										<li><a href="{children.link}" class="menu-sublink menu-sublink-{menu.data.uid}{f:if(condition:'{children.active}', then:' active')}"{f:if(condition:'{children.target}', then:' target="{children.target}"')} title="{settings.linktitle} - {children.title}">{children.title}</a></li>
+									</f:then>
+									<f:else>
+										<li class="submenu-seperator">&vert;</li>
+										<li><a href="{children.link}" class="menu-sublink menu-sublink-{menu.data.uid}{f:if(condition:'{children.active}', then:' active')}"{f:if(condition:'{children.target}', then:' target="{children.target}"')} title="{settings.linktitle} - {children.title}">{children.title}</a></li>
+									</f:else>
+								</f:if>
 							</f:for>
 						</ul>
 					</f:then>

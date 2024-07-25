@@ -1,0 +1,32 @@
+name: netwerk/hero
+typeName: netwerk_hero
+title: 'Hero'
+group: common
+prefixFields: true
+prefixType: vendor
+fields:
+  - identifier: palette_hero_image
+    type: Palette
+    label: 'Media'
+    fields:
+      - identifier: image
+        useExistingField: true
+        label: 'Bild'
+  - identifier: palette_hero_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: header
+        type: Textarea
+        label: 'Slogan'
+        rows: 2
+      - identifier: slogan_h1
+        type: Checkbox
+        label: 'Slogan ist H1'
+        renderType: checkboxToggle
+        default: 0
+      - type: Linebreak
+      - identifier: svg
+        type: File
+        label: 'Grafik'
+        allowed: svg

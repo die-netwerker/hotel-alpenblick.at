@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}">
+        <f:asset.css identifier="hero" href="EXT:nw_template/Resources/Public/Css/hero.min.css" />
+        <f:if condition="{data.image}">
+            <picture>
+                <source media="(max-width: 430px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'430c', height:'860c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'860c', height:'1720c', fileExtension:'webp')} 2x" width="430" height="860">
+                <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'800c', height:'1000c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1600c', height:'2000c', fileExtension:'webp')} 2x" width="800" height="1000">
+                <source media="(max-width: 1000px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1000c', height:'721c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2000c', height:'1442c', fileExtension:'webp')} 2x" width="1000" height="721">
+                <source media="(max-width: 1400px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1256c', height:'874c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2512c', height:'1748c', fileExtension:'webp')} 2x" width="1256" height="874">
+                <img src="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1776c', height:'900c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'3552c', height:'1800c', fileExtension:'webp')} 2x" width="1776" height="900" alt="{data.image.0.alternative}" title="{data.image.0.title}" />
+            </picture>
+        </f:if>
+        <f:if condition="{data.header} || {data.svg}">
+            <div class="{data.CType}-content">
+                <f:if condition="{data.header}">
+                    <f:if condition="{data.slogan_h1}">
+                        <f:then><h1>{data.header -> f:format.nl2br()}</h1></f:then>
+                        <f:else><p class="{data.CType}-header">{data.header -> f:format.nl2br()}</p></f:else>
+                    </f:if>
+                </f:if>
+                <f:if condition="{data.svg}">
+                    <f:cObject typoscriptObjectPath="lib.inline_svg" data="{src:'fileadmin{data.svg.0.identifier}'}" />
+                </f:if>
+            </div>
+        </f:if>
+    </div>
+</html>

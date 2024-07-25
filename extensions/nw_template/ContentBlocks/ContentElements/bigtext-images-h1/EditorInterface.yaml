@@ -1,0 +1,36 @@
+name: netwerk/bigtext-images-h1
+typeName: netwerk_bigtextimagesh1
+title: 'Text groß - Bilder - H1 optional'
+group: common
+prefixFields: true
+prefixType: vendor
+fields:
+  - identifier: palette_image
+    type: Palette
+    label: 'Media'
+    fields:
+      - identifier: image
+        useExistingField: true
+        label: 'Bilder'
+  - identifier: palette_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: text_left
+        type: Text
+        label: 'Text links'
+      - identifier: text_middle
+        type: Text
+        label: 'Text mitte'
+      - identifier: text_right
+        type: Text
+        label: 'Text rechts'
+      - type: Linebreak
+      - identifier: header
+        useExistingField: true
+        label: 'Text klein'
+      - identifier: header_h1
+        type: Checkbox
+        label: 'Text klein ist H1'
+        renderType: checkboxToggle
+        default: 0

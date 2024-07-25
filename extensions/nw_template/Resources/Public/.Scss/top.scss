@@ -11,6 +11,7 @@
     grid-template-areas: "info logo right";
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    background: base.$color_2;
     &.sticky {
         background: base.$color_2;
     }

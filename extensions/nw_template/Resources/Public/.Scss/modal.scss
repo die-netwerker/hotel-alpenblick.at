@@ -40,11 +40,28 @@
         overflow: auto;
         list-style: none;
         align-self: center;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        li {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul {
+            list-style: none;
+        }
+        & > li {
             & + li {
-                margin-top: 20px;
+                margin-top: 30px;
+            }
+            &.active {
+                .menulink {
+                    color: base.$color_1;
+                    svg {
+                        display: block;
+                    }
+                }
+                .submenu {
+                    display: flex;
+                }
             }
         }
         .menulink {
@@ -54,6 +71,8 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            column-gap: 10px;
+            cursor: pointer;
             svg {
                 display: none;
                 fill: base.$color_1;
@@ -62,9 +81,42 @@
             }
             &:hover {
                 color: base.$color_1;
-                svg {
-                    display: block;
+            }
+        }
+        .submenu {
+            display: none;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+            .submenu-seperator {
+                font-family: base.$font_2;
+                font-size: base.$fontsize_24;
+                color: #ECC8B4;
+                line-height: 1.2;
+            }
+            /*li {
+                &:not(:first-child) {
+                    position: relative;
+                    &::before {
+                        content: '|';
+                        font-family: base.$font_2;
+                        font-size: base.$fontsize_24;
+                        color: #ECC8B4;
+                        margin-right: 10px;
+                        margin-left: 10px
+                    }
                 }
+            }*/
+        }
+        .menu-sublink {
+            font-family: base.$font_2;
+            font-size: base.$fontsize_24;
+            line-height: 1.2;
+            color: #ECC8B4;
+            text-decoration: none;
+            &:hover, &.active {
+                color: base.$color_1;
             }
         }
     }
