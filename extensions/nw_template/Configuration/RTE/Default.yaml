@@ -23,7 +23,6 @@ editor:
         - link
         - sourceEditing
 
-
 ### line break
   # - '-'
 ### clipboard, removeFormat, undo, redo, find, selectAll, link, horizontalLine, bold, italic, underline, strikethrough, subscript, superscript, softhyphen, bulletedList, numberedList, alignment, style, sourceEditing

@@ -1,0 +1,42 @@
+name: netwerk/icon-text-button
+typeName: netwerk_icontextbutton
+title: 'Icon - Text - Button'
+group: common
+prefixFields: true
+prefixType: vendor
+fields:
+  - identifier: palette_icon
+    type: Palette
+    label: 'Media'
+    fields:
+      - identifier: svg
+        type: File
+        label: 'Grafik'
+        allowed: svg
+  - identifier: palette_icontextbutton_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: subheader
+        type: Textarea
+        label: 'Überüberschrift'
+        rows: 2
+      - identifier: header
+        type: Textarea
+        label: 'Überschrift'
+        rows: 2
+      - type: Linebreak
+      - identifier: bodytext
+        useExistingField: true
+        enableRichtext: true
+  - identifier: palette_button
+    type: Palette
+    label: 'Button'
+    fields:
+      - identifier: button_label
+        type: Text
+        label: 'Beschriftung'
+        placeholder: 'Mehr erfahren'
+      - identifier: button_typolink
+        type: Link
+        label: 'Link'

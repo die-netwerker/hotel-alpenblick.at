@@ -7,7 +7,7 @@
         <svg class="image-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 383.3">
             <defs>
                 <pattern id="image-right" width="352" height="383" patternUnits="userSpaceOnUse">
-                    <image href="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'352c', height:'383c', fileExtension:'webp')}" x="0" y="0" width="352" height="383" alt="{data.image.0.alternative}" title="{data.image.0.title}" />
+                    <image href="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'704c', height:'766c', fileExtension:'webp')}" x="0" y="0" width="352" height="383" alt="{data.image.0.alternative}" title="{data.image.0.title}" />
                 </pattern>
             </defs>
             <path d="M352,383.3H0v-207.3C0,78.8,78.8,0,176,0s176,78.8,176,176v207.3Z" fill="url(#image-right)"/>
@@ -15,10 +15,16 @@
         <svg class="image-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 507.4 335.1">
             <defs>
                 <pattern id="image-left" width="507" height="335" patternUnits="userSpaceOnUse">
-                    <image href="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'507c', height:'335c', fileExtension:'webp')}" x="0" y="0" width="507" height="335" alt="{data.image.1.alternative}" title="{data.image.1.title}" />
+                    <image href="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'1014c', height:'670c', fileExtension:'webp')}" x="0" y="0" width="507" height="335" alt="{data.image.1.alternative}" title="{data.image.1.title}" />
                 </pattern>
             </defs>
             <path d="M507.4,335.1H0V48.3l99.2-27.4c101.1-27.9,207.8-27.9,308.9,0l99.2,27.4v286.8Z" fill="url(#image-left)"/>
-          </svg>
+        </svg>
+        <f:if condition="{data.header}">
+            <f:if condition="{data.netwerk_header_h1}">
+                <f:then><h1 class="header">{data.header}</h1></f:then>
+                <f:else><p class="header">{data.header}</p></f:else>
+            </f:if>
+        </f:if>
     </div>
 </html>

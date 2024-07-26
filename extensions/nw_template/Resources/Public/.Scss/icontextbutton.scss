@@ -1,0 +1,25 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_icontextbutton {
+    @include mixins.flexbox($j_content:flex-start, $f_direction:column);
+    svg {
+        fill: base.$color_1;
+        width: base.$margin_150;
+        height: auto;
+        margin-bottom: base.$margin_100;
+    }
+    header {
+        text-align: center;
+        p {
+            @include mixins.text($font_weight:900, $letter_spacing:0.9px, $font_size:base.$fontsize_18);
+            text-transform: uppercase;
+            font-family: base.$font_2;
+            & + h2 {
+                margin-top: 10px
+            }
+        }
+        h2 {
+            @include mixins.header();
+        }
+    }
+}
