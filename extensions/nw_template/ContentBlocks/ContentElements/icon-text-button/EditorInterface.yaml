@@ -4,6 +4,8 @@ title: 'Icon - Text - Button'
 group: common
 prefixFields: true
 prefixType: vendor
+basics:
+  - TYPO3/Appearance
 fields:
   - identifier: palette_icon
     type: Palette
@@ -40,3 +42,13 @@ fields:
       - identifier: button_typolink
         type: Link
         label: 'Link'
+  - identifier: palette_icontextbutton_settings
+    type: Palette
+    label: 'Einstellungen'
+    fields:
+    - identifier: background
+      type: Checkbox
+      renderType: checkboxToggle
+      label: 'Hintergrund'
+      items:
+        - label: 'Terracotta Hintergrund'

@@ -78,8 +78,8 @@ page {
 
   ### javascript
   includeJSFooter {
-    #jquery = EXT:nw_template/Resources/Public/JavaScript/jquery.core.min.js
-    #jquery.forceOnTop = 1
+    jquery = EXT:nw_template/Resources/Public/JavaScript/jquery.min.js
+    jquery.forceOnTop = 1
     all = EXT:nw_template/Resources/Public/JavaScript/all.min.js
   }
 

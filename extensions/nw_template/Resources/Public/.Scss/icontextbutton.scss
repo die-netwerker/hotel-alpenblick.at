@@ -1,17 +1,50 @@
 @use 'base';
 @use 'mixins';
 .frame-type-netwerk_icontextbutton {
-    @include mixins.flexbox($j_content:flex-start, $f_direction:column);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &.frame-background {
+        padding-top: base.$margin_100;
+        padding-bottom: base.$margin_100;
+        background: base.$color_3;
+        svg {
+            fill: base.$color_2;
+        }
+        header {
+            h2, p {
+                color: base.$color_2;
+            }
+        }
+        p {
+            color: base.$color_2;
+            &.button {
+                a {
+                    color: base.$color_2;
+                    border-color: base.$color_2;
+                }
+            }
+        }
+    }
+    .content {
+        @include mixins.flexbox($j_content:flex-start, $f_direction:column);
+        @extend %frame_1160;
+    }
     svg {
         fill: base.$color_1;
         width: base.$margin_150;
         height: auto;
-        margin-bottom: base.$margin_100;
+        & + header {
+            margin-top: base.$margin_100;
+        }
+        & + p {
+            margin-top: 32px;
+        }
     }
     header {
         text-align: center;
         p {
-            @include mixins.text($font_weight:900, $letter_spacing:0.9px, $font_size:base.$fontsize_18);
+            @include mixins.subheader();
             text-transform: uppercase;
             font-family: base.$font_2;
             & + h2 {
@@ -20,6 +53,18 @@
         }
         h2 {
             @include mixins.header();
+        }
+        & + p {
+            margin-top: 20px;
+        }
+    }
+    p {
+        @include mixins.text($font_size:base.$fontsize_40);
+        &.text-center {
+            text-align: center;
+        }
+        &.button {
+            @include mixins.button($margin_top: 30px)
         }
     }
 }

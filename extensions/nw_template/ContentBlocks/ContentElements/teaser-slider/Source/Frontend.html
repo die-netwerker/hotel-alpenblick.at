@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}{f:if(condition:'{data.background}', then:' frame-background')}">
+        <f:asset.css identifier="keenslider" href="EXT:nw_template/Resources/Public/Css/keenslider.min.css" />
+        <f:asset.css identifier="teaserslider" href="EXT:nw_template/Resources/Public/Css/teaserslider.min.css" />
+        <f:asset.script identifier="keenslider" src="EXT:nw_template/Resources/Public/JavaScript/keenslider.min.js" />
+        <f:asset.script identifier="teaserslider_{f:format.raw(value:'{data.uid}')}">
+        var teaserslider_{f:format.raw(value:'{data.uid}')} = new KeenSlider("#c<f:format.raw>{data.uid}</f:format.raw> .keen-slider", {
+            loop: true,
+            drag: 1,
+            slides: {
+                perView: 1,
+                spacing: 0
+            },
+            created: function(slider) {
+                document.querySelector("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot1").classList.toggle("active");
+            },
+            slideChanged: function(slider) {
+                var dots = document.querySelectorAll("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot");
+                dots.forEach(function(dot, idx) {
+                    if (idx === slider.track.details.rel) {
+                        dot.classList.toggle("active");
+                    } else {
+                        dot.classList.remove("active");
+                    }
+                });
+            }
+        })
+        var dots = document.querySelectorAll("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot");
+        dots.forEach(function(dot, idx) {
+            dot.addEventListener("click", function() {
+                imagestextSlider.moveToIdx(idx);
+            });
+        });
+        </f:asset.script>
+        <div class="content">
+            <f:if condition="{data.header}">
+                <h2>{data.header}</h2>
+            </f:if>
+            <ul class="keen-slider">
+                <f:for each="{data.teaser_slider}" as="teaserslider" iteration="iterator">
+                    <li class="keen-slider__slide">
+                        <f:if condition="{teaserslider.image}">
+                            <picture>
+                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'710c', height:'710c', fileExtension:'webp')}, {f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'1400c', height:'1400c', fileExtension:'webp')} 2x" width="710" height="710">
+                                <img src="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'710c', height:'710c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'1400c', height:'1400c', fileExtension:'webp')} 2x" width="710" height="710" alt="{teaserslider.image.0.alternative}" title="{teaserslider.image.0.title}" loading="lazy" />
+                            </picture> 
+                        </f:if>
+                        <div class="teaserslider-text">
+                            <f:if condition="{teaserslider.header}"><p class="header">{teaserslider.header}</p></f:if>
+                            <f:if condition="{teaserslider.text}"><p class="text">{teaserslider.text -> f:format.nl2br()}</p></f:if>
+                            <f:if condition="{teaserslider.textsmall}"><p class="textsmall">{teaserslider.textsmall}</p></f:if>
+                            <f:if condition="{teaserslider.textbig}"><p class="textbig">{teaserslider.textbig}</p></f:if>
+                            <f:if condition="{teaserslider.button1_typolink} || {teaserslider.button2_typolink}">
+                                <div class="buttons">
+                                    <f:if condition="{teaserslider.button1_typolink}">
+                                        <f:link.typolink parameter="{teaserslider.button1_typolink}">
+                                            <f:if condition="{teaserslider.button1_label}">
+                                                <f:then>{teaserslider.button1_label}</f:then>
+                                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                                            </f:if>
+                                        </f:link.typolink>
+                                    </f:if>
+                                    <f:if condition="{teaserslider.button2_typolink}">
+                                        <f:link.typolink parameter="{teaserslider.button2_typolink}">
+                                            <f:if condition="{teaserslider.button2_label}">
+                                                <f:then>{teaserslider.button2_label}</f:then>
+                                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                                            </f:if>
+                                        </f:link.typolink>
+                                    </f:if>
+                                </div>
+                            </f:if>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+            <f:if condition="{data.teaser_slider -> f:count()} != 1">
+                <ul class="keen-dots">
+                    <f:for each="{data.teaser_slider}" as="dot" iteration="iterator">
+                        <li class="dot dot{iterator.cycle}"></li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </div>
+    </div>
+</html>

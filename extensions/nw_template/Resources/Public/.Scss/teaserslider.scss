@@ -1,0 +1,105 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_teaserslider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &.frame-background {
+        padding-top: base.$margin_88;
+        padding-bottom: base.$margin_88;
+        background: base.$color_3;
+        h2 {
+            color: base.$color_2
+        }
+        .keen-slider {
+            .teaserslider-text {
+                p {
+                    color: base.$color_2;
+                }
+                .buttons {
+                    a {
+                        color: base.$color_2;;
+                        border-color: base.$color_2;
+                    }
+                }
+            }
+        }
+        .keen-dots {
+            .dot {
+                border-color: base.$color_2;
+                &.active {
+                    background-color: base.$color_2;
+                }
+            }
+        }
+    }
+    ul {
+        list-style: none;
+    }
+    .content {
+        @include mixins.flexbox($j_content:flex-start, $f_direction:column);
+        @extend %frame_1455;
+    }
+    h2 {
+        @include mixins.header($size:base.$fontsize_170, $line-height:1.2);
+        text-align: center;
+        transform: translateY(33%);
+        z-index: 1;
+    }
+    .keen-slider {
+        li {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 36px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .teaserslider-text {
+            align-self: flex-end;
+            padding-bottom: base.$margin_64;
+            p {
+                &.header {
+                    @include mixins.header();
+                }
+                &.text {
+                    @include mixins.text($line_height:1.3);
+                    font-family: base.$font_2;
+                    margin-top: 30px
+                }
+                &.textsmall {
+                    @include mixins.subheader();
+                    text-transform: uppercase;
+                    font-family: base.$font_2;
+                    margin-top: 30px;
+                }
+                &.textbig {
+                    @include mixins.header($size:base.$fontsize_40);
+                    margin-top: 10px;
+                }
+            }
+            .buttons {
+                @include mixins.flexbox($j_content:flex-start, $f_direction:row, $c_gap:36px);
+                @include mixins.button();
+                margin-top: 30px;
+            }
+        }
+    }
+    .keen-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 30px;
+        .dot {
+            width: 32px;
+            height: 32px;
+            border: 2px solid base.$color_1;
+            border-radius: 100%;
+            &.active {
+                background-color: base.$color_1;
+            }
+        }
+    }
+}

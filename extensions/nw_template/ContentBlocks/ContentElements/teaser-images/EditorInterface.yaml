@@ -1,0 +1,30 @@
+name: netwerk/teaser-images
+typeName: netwerk_teaserimages
+title: 'Teaser - 2 Bilder'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: subheader
+    useExistingField: true
+    label: 'Überüberschrift'
+  - identifier: header
+    label: 'Überschrift'
+    type: Textarea
+    rows: 2
+  - identifier: image
+    label: 'Bilder'
+    useExistingField: true
+  - identifier: palette_teasertwoimages_button
+    type: Palette
+    label: 'Button'
+    fields:
+      - identifier: button_label
+        type: Text
+        label: 'Beschriftung'
+        placeholder: 'Mehr erfahren'
+      - identifier: button_typolink
+        type: Link
+        label: 'Link'

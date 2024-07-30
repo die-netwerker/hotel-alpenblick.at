@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="teaserimages" href="EXT:nw_template/Resources/Public/Css/teaserimages.min.css" />
+        <picture>
+            <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1160c', height:'860c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2320c', height:'1720c', fileExtension:'webp')} 2x" width="1160" height="860">
+            <img src="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1160c', height:'860c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2320c', height:'1720c', fileExtension:'webp')} 2x" width="1160" height="860" alt="{data.image.0.alternative}" title="{data.image.0.title}" loading="lazy" />
+        </picture>
+        <svg class="{data.CType}-image-right" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 561 450">
+            <defs>
+                <pattern id="{data.CType}-image-right" width="561" height="450" patternUnits="userSpaceOnUse">
+                    <image href="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'1122c', height:'900c', fileExtension:'webp')}" x="0" y="0" width="561" height="450" alt="{data.image.1.alternative}" title="{data.image.1.title}" />
+                </pattern>
+            </defs>
+            <path d="M561,450H0v-243.4C0,92.5,125.6,0,280.5,0s280.5,92.5,280.5,206.6v243.4Z" fill="url(#{data.CType}-image-right)"/>
+        </svg>
+        <div class="content">
+            <f:if condition="{data.subheader} || {data.header}">
+                <header>
+                    <f:if condition="{data.subheader}"><p>{data.subheader -> f:format.nl2br()}</p></f:if>
+                    <f:if condition="{data.header}"><h2>{data.header -> f:format.nl2br()}</h2></f:if>
+                </header>
+            </f:if>
+            <f:if condition="{data.button_label} || {data.button_typolink}">
+                <p class="button">
+                    <f:link.typolink parameter="{data.button_typolink}">
+                        <f:if condition="{data.button_label}">
+                            <f:then>{data.button_label}</f:then>
+                            <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                        </f:if>
+                    </f:link.typolink>
+                </p>
+            </f:if>
+        </div> 
+    </div>
+</html>

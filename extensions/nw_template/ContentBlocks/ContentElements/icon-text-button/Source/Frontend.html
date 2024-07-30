@@ -1,25 +1,27 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.background}', then:' frame-background')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
         <f:asset.css identifier="icontextbutton" href="EXT:nw_template/Resources/Public/Css/icontextbutton.min.css" />
-        <f:if condition="{data.svg}">
-            <f:cObject typoscriptObjectPath="lib.inline_svg" data="{src:'fileadmin{data.svg.0.identifier}'}" />
-        </f:if>
-        <f:if condition="{data.subheader} || {data.header}">
-            <header>
-                <f:if condition="{data.subheader}"><p>{data.subheader -> f:format.nl2br()}</p></f:if>
-                <f:if condition="{data.header}"><h2>{data.header -> f:format.nl2br()}</h2></f:if>
-            </header>
-        </f:if>
-        <f:if condition="{data.bodytext}">{data.bodytext -> f:format.html()}</f:if>
-        <f:if condition="{data.button_label} || {data.button_typolink}">
-            <p class="button">
-                <f:link.typolink parameter="{data.button_typolink}">
-                    <f:if condition="{data.button_label}">
-                        <f:then>{data.button_label}</f:then>
-                        <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
-                    </f:if>
-                </f:link.typolink>
-            </p>
-        </f:if>
+        <div class="content">
+            <f:if condition="{data.svg}">
+                <f:cObject typoscriptObjectPath="lib.inline_svg" data="{src:'fileadmin{data.svg.0.identifier}'}" />
+            </f:if>
+            <f:if condition="{data.subheader} || {data.header}">
+                <header>
+                    <f:if condition="{data.subheader}"><p>{data.subheader -> f:format.nl2br()}</p></f:if>
+                    <f:if condition="{data.header}"><h2>{data.header -> f:format.nl2br()}</h2></f:if>
+                </header>
+            </f:if>
+            <f:if condition="{data.bodytext}">{data.bodytext -> f:format.html()}</f:if>
+            <f:if condition="{data.button_label} || {data.button_typolink}">
+                <p class="button">
+                    <f:link.typolink parameter="{data.button_typolink}">
+                        <f:if condition="{data.button_label}">
+                            <f:then>{data.button_label}</f:then>
+                            <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                        </f:if>
+                    </f:link.typolink>
+                </p>
+            </f:if>
+        </div>
     </div>
 </html>

@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="teaser" href="EXT:nw_template/Resources/Public/Css/teaser.min.css" />
+        <f:asset.script identifier="isotope" src="EXT:nw_template/Resources/Public/JavaScript/jquery.isotope.min.js" />
+        <f:asset.script identifier="teaser">
+            jQuery('.frame-type-netwerk_teaser').each(function () {
+                var $teaser = jQuery('ul', this);
+                $teaser.isotope({
+                    itemSelector: '.netwerk_teaser-item',
+                    percentPosition: true,
+                    masonry: {
+                        columnWidth: '.netwerk_teaser-sizer',
+                        gutter: '.netwerk_teaser-gutter',
+                        horizontalOrder: true
+                    }
+                });
+                $teaser[0].addEventListener('load', (function () {
+                    var runs;
+                    var update = function () {
+                        $teaser.isotope('layout');
+                        runs = false;
+                    };
+                    return function () {
+                        if (!runs) {
+                            runs = true;
+                            setTimeout(update, 33);
+                        }
+                    };
+                }()), true);
+            });
+        </f:asset.script>
+        <f:if condition="{data.teaser}">
+            <ul>
+                <li class="netwerk_teaser-sizer"></li>
+                <li class="netwerk_teaser-gutter"></li>
+                <f:for each="{data.teaser}" as="teaser" iteration="iterator">
+                    <li class="netwerk_teaser-item">
+                        <f:link.typolink parameter="{teaser.typolink}">
+                            <f:if condition="{teaser.header}">
+                                <div class="teaser-content">
+                                    <p class="teaser-header">{teaser.header -> f:format.nl2br()}</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 45"><path d="M95.5,45H22.5C10.1,45,0,34.9,0,22.5S10.1,0,22.5,0h73c12.4,0,22.5,10.1,22.5,22.5s-10.1,22.5-22.5,22.5ZM22.5,2C11.2,2,2,11.2,2,22.5s9.2,20.5,20.5,20.5h73c11.3,0,20.5-9.2,20.5-20.5S106.8,2,95.5,2H22.5Z"/><path d="M86.3,36.2c0-3.7,1.3-7.5,5.5-12.2H21c-2.2,0-1.7,1.6-3.7,1.6s-2.3-1.4-2.3-2.9.8-2.9,2.3-2.9,1.5,1.6,3.7,1.6h70.8c-4.2-4.7-5.5-8.6-5.5-12.2s.2-2,.7-2,.7.6,1.1,1.7c2.5,6,8.3,11.3,14.8,12.3,1.3.2,1.8.8,1.8,1.6s-.5,1.3-1.8,1.6c-6.5,1-12.3,6.3-14.8,12.3-.5,1.1-.7,1.7-1.1,1.7s-.7-.6-.7-2"/></svg>
+                                </div>
+                            </f:if>
+                            <f:if condition="{teaser.image}">
+                                <picture>
+                                    <source media="(max-width: 430px)" srcset="{f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'312c', height:'312c', fileExtension:'webp')}, {f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'624c', height:'624c', fileExtension:'webp')} 2x" width="312" height="312">
+                                    <source media="(max-width: 600px)" srcset="{f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'437c', height:'437c', fileExtension:'webp')}, {f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'874c', height:'874c', fileExtension:'webp')} 2x" width="437" height="437">
+                                    <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'407c', height:'407c', fileExtension:'webp')}, {f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'814c', height:'814c', fileExtension:'webp')} 2x" width="407" height="407">
+                                    <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'381c', height:'381c', fileExtension:'webp')}, {f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'762c', height:'762c', fileExtension:'webp')} 2x" width="381" height="381">
+                                    <img src="{f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'560c', height:'560c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{teaser.image.0}', treatIdAsReference:'true', width:'1120c', height:'1120c', fileExtension:'webp')} 2x" width="560" height="560" alt="{teaser.image.0.alternative}" title="{teaser.image.0.title}" loading="lazy" />
+                                </picture> 
+                            </f:if>
+                        </f:link.typolink>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</html>

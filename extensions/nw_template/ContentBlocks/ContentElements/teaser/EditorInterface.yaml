@@ -1,0 +1,27 @@
+name: netwerk/teaser
+typeName: netwerk_teaser
+title: 'Teaser'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: teaser
+    type: Collection
+    label: 'Teaser'
+    labelField: header
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: header
+        label: 'Titel'
+        type: Textarea
+        rows: 2
+      - identifier: typolink
+        type: Link
+        label: 'Link'
+      - identifier: image
+        label: 'Bild'
+        type: File

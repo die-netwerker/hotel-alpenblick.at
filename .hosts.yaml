@@ -1,5 +1,5 @@
 config:
-  repository: https://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@github.com/die-netwerker/hotel-alpenblick.at.git
+  repository: https://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@github.com/die-netwerker/hotel-alpenblick.at.git
 hosts:
   main:
     hostname: 'p673995.webspaceconfig.de'

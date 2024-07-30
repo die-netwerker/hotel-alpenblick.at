@@ -9,12 +9,17 @@
 	row-gap: $r_gap;
 	flex-wrap: $f_wrap
 }
-@mixin header($size:base.$fontsize_75, $color:base.$color_1, $line-height:1.2) {
+@mixin header($size:base.$fontsize_75, $line-height:1.2) {
 	font-weight: 400;
 	font-size: $size;
 	font-family: base.$font_1;
 	line-height: $line-height;
-	color: $color
+}
+@mixin subheader($font_weight:900, $font_size:base.$fontsize_18, $line_height:1.2, $letter_spacing:0.9px) {
+    font-weight: $font_weight;
+    font-size: $font_size;
+    line-height: $line_height;
+    letter-spacing: $letter_spacing
 }
 @mixin text($font_weight:400, $font_size:base.$fontsize_20, $line_height:1.2, $letter_spacing:unset) {
     font-weight: $font_weight;

@@ -1,0 +1,74 @@
+name: netwerk/teaser-slider
+typeName: netwerk_teaserslider
+title: 'Teaser Slider'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Überschrift'
+  - identifier: teaser_slider
+    type: Collection
+    label: 'Teaser'
+    labelField: header
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: palette_teaser-slider_content
+        type: Palette
+        label: 'Inhalt'
+        fields:
+          - identifier: header
+            label: 'Überschrift'
+            type: Text
+          - type: Linebreak
+          - identifier: text
+            label: 'Text'
+            type: Textarea
+            rows: 2
+          - type: Linebreak
+          - identifier: textsmall
+            label: 'Text klein (z.B. Größe - Personen)'
+            type: Text
+            placeholder: '18 m² / für 1-2 Personen'
+          - identifier: textbig
+            label: 'Text groß (z.B. ab Preis)'
+            type: Text
+            placeholder: 'ab €XXX ,- pro Person/Tag'
+          - type: Linebreak
+          - identifier: button1_label
+            type: Text
+            label: 'Beschriftung - Button 1'
+            placeholder: 'Mehr details'
+          - identifier: button1_typolink
+            type: Link
+            label: 'Link - Button 1'
+          - type: Linebreak
+          - identifier: button2_label
+            type: Text
+            label: 'Beschriftung - Button 2'
+            placeholder: 'Mehr details'
+          - identifier: button2_typolink
+            type: Link
+            label: 'Link - Button 2'
+      - identifier: palette_teaser-slider_image
+        type: Palette
+        label: 'Media'
+        fields:
+          - identifier: image
+            label: 'Bild'
+            type: File
+  - identifier: palette_teaser-slider_settings
+    type: Palette
+    label: 'Einstellungen'
+    fields:
+    - identifier: background
+      type: Checkbox
+      renderType: checkboxToggle
+      label: 'Hintergrund'
+      items:
+        - label: 'Terracotta Hintergrund'

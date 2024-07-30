@@ -1,0 +1,68 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_teaser {
+    padding-right: 4%;
+    padding-left: 4%;
+    width: 100%;
+    ul {
+        list-style: none;
+        position: relative;
+        li {
+            position: relative;
+            &.netwerk_teaser-sizer, &.netwerk_teaser-item {
+                width: calc((100% - 72px) / 3);
+            }
+            &.netwerk_teaser-gutter {
+                width: 36px;
+            }
+            &:nth-child(4) {
+                padding-top: base.$margin_150;
+            }
+            &:nth-child(5) {
+                padding-top: calc(base.$margin_150 * 2);
+            }
+            &:nth-child(3n + 1), &:nth-child(3n + 2) {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: -18px;
+                    top: 0;
+                    width: 1px;
+                    height: 100%;
+                    background: base.$color_1;
+                }
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color: base.$color_1
+    }
+    .teaser-content {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap: 16px;
+        margin-bottom: 20px;
+        p {
+            @include mixins.header();
+            writing-mode:vertical-rl;
+            text-orientation: mixed;
+            rotate: 180deg;
+        }
+        svg {
+            fill: base.$color_1;
+            height: 45px;
+            width: auto;
+            rotate: 90deg;
+            transform-origin: bottom left;
+            transform: translateX(-100%);
+            align-self: flex-end;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

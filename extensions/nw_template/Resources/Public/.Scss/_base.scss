@@ -25,3 +25,13 @@ $margin_88: clamp(44px, 17.6px + 4.4vi, 88px); /* 44 -> 88 */
 $margin_100: clamp(50px, 20px + 5vw, 100px); /* 50 -> 100 */
 $margin_128: clamp(64px, 25.6px + 6.4vi, 128px); /* 64 -> 128 */
 $margin_150: clamp(75px, 30px + 7.5vw, 150px); /* 75 -> 150 */
+
+// frame
+%frame_1160 {
+    width: 86%;
+    max-width: 1160px;
+}
+%frame_1455 {
+    width: 86%;
+    max-width: 1455px;
+}
