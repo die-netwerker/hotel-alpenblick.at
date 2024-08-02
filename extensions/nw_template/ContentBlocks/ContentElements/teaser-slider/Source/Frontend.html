@@ -28,7 +28,7 @@
         var dots = document.querySelectorAll("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot");
         dots.forEach(function(dot, idx) {
             dot.addEventListener("click", function() {
-                imagestextSlider.moveToIdx(idx);
+                teaserslider_<f:format.raw>{data.uid}</f:format.raw>.moveToIdx(idx);
             });
         });
         </f:asset.script>
@@ -56,7 +56,7 @@
                                         <f:link.typolink parameter="{teaserslider.button1_typolink}">
                                             <f:if condition="{teaserslider.button1_label}">
                                                 <f:then>{teaserslider.button1_label}</f:then>
-                                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
                                             </f:if>
                                         </f:link.typolink>
                                     </f:if>
@@ -64,7 +64,7 @@
                                         <f:link.typolink parameter="{teaserslider.button2_typolink}">
                                             <f:if condition="{teaserslider.button2_label}">
                                                 <f:then>{teaserslider.button2_label}</f:then>
-                                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/ContentBlocks/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
                                             </f:if>
                                         </f:link.typolink>
                                     </f:if>
@@ -80,6 +80,14 @@
                         <li class="dot dot{iterator.cycle}"></li>
                     </f:for>
                 </ul>
+            </f:if>
+            <f:if condition="{data.morelink_typolink}">
+                <f:link.typolink parameter="{data.morelink_typolink}" class="morelink">
+                    <f:if condition="{data.morelink_label}">
+                        <f:then>{data.morelink_label}</f:then>
+                        <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                    </f:if>
+                </f:link.typolink>
             </f:if>
         </div>
     </div>

@@ -3,7 +3,7 @@
         <f:asset.css identifier="teaser" href="EXT:nw_template/Resources/Public/Css/teaser.min.css" />
         <f:asset.script identifier="isotope" src="EXT:nw_template/Resources/Public/JavaScript/jquery.isotope.min.js" />
         <f:asset.script identifier="teaser">
-            jQuery('.frame-type-netwerk_teaser').each(function () {
+            <f:comment>jQuery('.frame-type-netwerk_teaser').each(function () {
                 var $teaser = jQuery('ul', this);
                 $teaser.isotope({
                     itemSelector: '.netwerk_teaser-item',
@@ -27,12 +27,12 @@
                         }
                     };
                 }()), true);
-            });
+            });</f:comment>
         </f:asset.script>
         <f:if condition="{data.teaser}">
             <ul>
-                <li class="netwerk_teaser-sizer"></li>
-                <li class="netwerk_teaser-gutter"></li>
+                <f:comment><li class="netwerk_teaser-sizer"></li>
+                <li class="netwerk_teaser-gutter"></li></f:comment>
                 <f:for each="{data.teaser}" as="teaser" iteration="iterator">
                     <li class="netwerk_teaser-item">
                         <f:link.typolink parameter="{teaser.typolink}">

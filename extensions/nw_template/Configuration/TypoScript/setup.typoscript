@@ -172,6 +172,7 @@ page {
       book_uid = {$book_uid}
       imagegallery_uid = {$imagegallery_uid}
       insider_uid = {$insider_uid}
+      newsletter_uid = {$newsletter_uid}
 
       name = {$name}
       owner = {$owner}

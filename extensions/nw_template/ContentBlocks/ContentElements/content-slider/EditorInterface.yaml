@@ -1,0 +1,49 @@
+name: netwerk/content-slider
+typeName: netwerk_contentslider
+title: 'Inhalt Slider'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: content_slider
+    type: Collection
+    label: 'Teaser'
+    labelField: header
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: palette_content-slider_content
+        type: Palette
+        label: 'Inhalt'
+        fields:
+          - identifier: header
+            label: 'Überschrift'
+            type: Text
+          - identifier: subheader
+            label: 'Überschrift klein'
+            type: Text
+          - type: Linebreak
+          - identifier: text
+            label: 'Text'
+            type: Textarea
+            rows: 2
+      - identifier: palette_content-slider_image
+        type: Palette
+        label: 'Media'
+        fields:
+          - identifier: image
+            label: 'Bild'
+            type: File
+  - identifier: palette_content-slider_settings
+    type: Palette
+    label: 'Einstellungen'
+    fields:
+    - identifier: background
+      type: Checkbox
+      renderType: checkboxToggle
+      label: 'Hintergrund'
+      items:
+        - label: 'Terracotta Hintergrund'

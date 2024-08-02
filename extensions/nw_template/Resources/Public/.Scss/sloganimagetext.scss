@@ -1,0 +1,54 @@
+@use 'base';
+@use 'mixins';
+
+.frame-type-netwerk_sloganimagetext {
+    width: 100%;
+    padding-right: 4%;
+    padding-left: 4%;
+    display: grid;
+    grid-template-areas:
+        "slogan img img"
+        ". content .";
+    grid-template-columns: 24% 1fr 24%;
+    row-gap: base.$margin_64;
+    position: relative;
+    .slogan {
+        grid-area: slogan;
+        @include mixins.header($size:base.$fontsize_170, $line-height:1.2);
+        color: base.$color_5;
+        align-self: flex-end;
+        z-index: 1;
+        position: absolute;
+        transform: translateY(base.$margin_64);
+    }
+    picture {
+        grid-area: img;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .content {
+        grid-area: content;
+        header {
+            h2 {
+                @include mixins.header();
+            }
+            & + p {
+                margin-top: 20px
+            }
+        }
+        p {
+            @include mixins.bodytext();
+            font-family: base.$font_2;
+        }
+    }
+    @media (max-width: 1300px) {
+        grid-template-columns: 10% 1fr 10%;
+    }
+    @media (max-width: 1000px) {
+        grid-template-areas:
+            "slogan img img"
+            "content content content";
+    }
+}

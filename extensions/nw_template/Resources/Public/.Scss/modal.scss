@@ -145,6 +145,9 @@
             }
         }
     }
+    &.sticky {
+        top:98px
+    }
 }
 .modal {
     overflow: hidden;

@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}{f:if(condition:'{data.background}', then:' frame-background')}">
+        <f:asset.css identifier="keenslider" href="EXT:nw_template/Resources/Public/Css/keenslider.min.css" />
+        <f:asset.css identifier="contentslider" href="EXT:nw_template/Resources/Public/Css/contentslider.min.css" />
+        <f:asset.script identifier="keenslider" src="EXT:nw_template/Resources/Public/JavaScript/keenslider.min.js" />
+        <f:asset.script identifier="contentslider_{f:format.raw(value:'{data.uid}')}">
+            var contentslider_{f:format.raw(value:'{data.uid}')} = new KeenSlider("#c<f:format.raw>{data.uid}</f:format.raw> .keen-slider", {
+                loop: true,
+                drag: 1,
+                slides: {
+                    perView: 1,
+                    spacing: 0
+                },
+                created: function(slider) {
+                    document.querySelector("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot1").classList.toggle("active");
+                },
+                slideChanged: function(slider) {
+                    var dots = document.querySelectorAll("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot");
+                    dots.forEach(function(dot, idx) {
+                        if (idx === slider.track.details.rel) {
+                            dot.classList.toggle("active");
+                        } else {
+                            dot.classList.remove("active");
+                        }
+                    });
+                }
+            })
+            var dots = document.querySelectorAll("#c<f:format.raw>{data.uid}</f:format.raw> .keen-dots .dot");
+            dots.forEach(function(dot, idx) {
+                dot.addEventListener("click", function() {
+                    contentslider_<f:format.raw>{data.uid}</f:format.raw>.moveToIdx(idx);
+                });
+            });
+        </f:asset.script>
+        <ul class="keen-slider">
+            <f:for each="{data.content_slider}" as="contentslider" iteration="iterator">
+                <li class="keen-slider__slide">
+                    <f:if condition="{contentslider.header}">
+                        <h2>{contentslider.header}</h2>
+                    </f:if>
+                    <div class="media-left">
+                        <f:if condition="{contentslider.image.0}">
+                            <picture>
+                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{contentslider.image.0}', treatIdAsReference:'true', width:'860c', height:'541c', fileExtension:'webp')}, {f:uri.image(image:'{contentslider.image.0}', treatIdAsReference:'true', width:'1720c', height:'1082c', fileExtension:'webp')} 2x" width="860" height="541">
+                                <img src="{f:uri.image(image:'{contentslider.image.0}', treatIdAsReference:'true', width:'860c', height:'541c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{contentslider.image.0}', treatIdAsReference:'true', width:'1720c', height:'1082c', fileExtension:'webp')} 2x" width="860" height="541" alt="{contentslider.image.0.alternative}" title="{contentslider.image.0.title}" loading="lazy" />
+                            </picture> 
+                        </f:if>
+                        <f:if condition="{contentslider.image.2}">
+                            <picture>
+                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'272c', height:'727c', fileExtension:'webp')}, {f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'544c', height:'544c', fileExtension:'webp')} 2x" width="272" height="272">
+                                <img src="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'272c', height:'772c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'544c', height:'544c', fileExtension:'webp')} 2x" width="272" height="272" alt="{contentslider.image.2.alternative}" title="{contentslider.image.2.title}" loading="lazy" />
+                            </picture> 
+                        </f:if>
+                    </div>
+                    <div class="content-right">
+                        <f:if condition="{contentslider.image.2}">
+                            <picture>
+                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'710c', height:'400c', fileExtension:'webp')}, {f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'1420c', height:'800c', fileExtension:'webp')} 2x" width="710" height="400">
+                                <img src="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'710c', height:'400c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'1420c', height:'800c', fileExtension:'webp')} 2x" width="710" height="400" alt="{contentslider.image.2.alternative}" title="{contentslider.image.2.title}" loading="lazy" />
+                            </picture> 
+                        </f:if>
+                        <div class="contentslider-text">
+                            <f:if condition="{contentslider.subheader}"><p class="subheader">{contentslider.subheader}</p></f:if>
+                            <f:if condition="{contentslider.text}"><p class="text">{contentslider.text -> f:format.nl2br()}</p></f:if>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.4 397.4">
+                            <defs>
+                                <pattern id="svgfill-{iterator.cycle}" width="397" height="397" patternUnits="userSpaceOnUse">
+                                    <image href="{f:uri.image(image:'{contentslider.image.3}', treatIdAsReference:'true', width:'794c', height:'794c', fileExtension:'webp')}" x="0" y="0" width="397" height="397" alt="{contentslider.image.3.alternative}" title="{contentslider.image.3.title}" />
+                                </pattern>
+                            </defs>
+                            <path d="M397.4,198.7c0-43.9-29.2-82.5-71.5-94.5v-32.7h-32.7C281.2,29.2,242.6,0,198.7,0c-43.9,0-82.5,29.2-94.5,71.5h-32.7v32.7C29.2,116.1,0,154.7,0,198.7c0,43.9,29.2,82.5,71.5,94.5v32.7h32.7c12,42.3,50.5,71.5,94.5,71.5,43.9,0,82.5-29.2,94.5-71.5h32.7v-32.7c42.3-12,71.5-50.5,71.5-94.5" fill="url(#svgfill-{iterator.cycle})"/>
+                        </svg>
+                    </div>
+                </li>
+            </f:for>
+        </ul>
+        <f:if condition="{data.content_slider -> f:count()} != 1">
+            <ul class="keen-dots">
+                <f:for each="{data.content_slider}" as="dot" iteration="iterator">
+                    <li class="dot dot{iterator.cycle}"></li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</html>

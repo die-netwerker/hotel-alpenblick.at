@@ -1,0 +1,37 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_icontext {
+    width: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
+    display: grid;
+    grid-template-columns: 24% 1fr 24%;
+    grid-template-areas: ". content .";
+    ul {
+        grid-area: content;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: base.$margin_64;
+        li {
+            display: flex;
+            column-gap: base.$margin_40;
+        }
+    }
+    svg {
+        fill: base.$color_1;
+        width: base.$margin_150;
+        height: auto;
+        flex-shrink: 0
+    }
+    p {
+        @include mixins.bodytext();
+        font-family: base.$font_2;
+    }
+    @media (max-width: 1300px) {
+        grid-template-columns: 10% 1fr 10%;
+    }
+    @media (max-width: 1000px) {
+        display: block;
+    }
+}

@@ -1,0 +1,24 @@
+name: netwerk/icontext
+typeName: netwerk_icontext
+title: 'Icon - Text'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: icontext
+    type: Collection
+    label: 'Icon - Text'
+    labelField: bodytext
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: icontext_svg
+        type: File
+        label: 'Grafik'
+        allowed: svg
+      - identifier: bodytext
+        type: Textarea
+        enableRichtext: true

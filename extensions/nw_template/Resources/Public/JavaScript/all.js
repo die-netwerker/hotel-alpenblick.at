@@ -21,12 +21,15 @@ function addScrolled() {
   const hero = document.getElementsByClassName("frame-type-netwerk_hero").length;
   if ( hero === 0 ) {
       document.getElementById("top").classList.add("sticky");
+      document.getElementById("modal").classList.add("sticky");
   } else {
       let sp = window.scrollY;
       if (sp >= 8) {
           document.querySelector("#top").classList.add("sticky");
+          document.querySelector("#modal").classList.add("sticky");
       } else {
           document.querySelector("#top").classList.remove("sticky");
+          document.querySelector("#modal").classList.remove("sticky");
       }
   }
 }

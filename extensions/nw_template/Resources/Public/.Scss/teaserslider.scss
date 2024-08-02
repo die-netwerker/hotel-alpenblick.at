@@ -32,6 +32,10 @@
                 }
             }
         }
+        .morelink {
+            color: base.$color_2;;
+            border-color: base.$color_2;
+        }
     }
     ul {
         list-style: none;
@@ -97,9 +101,22 @@
             height: 32px;
             border: 2px solid base.$color_1;
             border-radius: 100%;
+            cursor: pointer;
             &.active {
                 background-color: base.$color_1;
             }
         }
+    }
+    .morelink {
+        margin-top: 30px;
+        font-family: base.$font_2;
+        font-size: base.$fontsize_18;
+        line-height: 1.2;
+        font-weight: 900;
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: base.$color_1;
+        border-bottom: 2px solid base.$color_1;
     }
 }

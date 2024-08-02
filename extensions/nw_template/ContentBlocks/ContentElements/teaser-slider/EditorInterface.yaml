@@ -62,6 +62,17 @@ fields:
           - identifier: image
             label: 'Bild'
             type: File
+  - identifier: palette_teaser-slider_morelink
+    type: Palette
+    label: 'Link'
+    fields:
+    - identifier: morelink_label
+      type: Text
+      label: 'Link Beschriftung'
+      placeholder: 'Mehr details'
+    - identifier: morelink_typolink
+      type: Link
+      label: 'Link'
   - identifier: palette_teaser-slider_settings
     type: Palette
     label: 'Einstellungen'

@@ -34,6 +34,15 @@
 			<trans-unit id="more">
 				<source>More</source>
 			</trans-unit>
+			<trans-unit id="learn_more">
+				<source>Learn more</source>
+			</trans-unit>
+			<trans-unit id="newsletter_text">
+				<source><![CDATA[Updates & offers<br />from Alpenblick]]></source>
+			</trans-unit>
+			<trans-unit id="register">
+				<source>register</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -1,0 +1,31 @@
+name: netwerk/slogan-image-text
+typeName: netwerk_sloganimagetext
+title: 'Slogan - Bild - Text'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: slogan
+    type: Textarea
+    rows: 2
+    label: 'Slogan'
+  - identifier: palette_slogan-image-text_image
+    type: Palette
+    label: 'Media'
+    fields:
+      - identifier: image
+        label: 'Bild'
+        type: File
+  - identifier: palette_slogan-image-text_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: header
+        label: 'Überschrift'
+        useExistingField: true
+      - type: Linebreak
+      - identifier: bodytext
+        useExistingField: true
+        enableRichtext: true

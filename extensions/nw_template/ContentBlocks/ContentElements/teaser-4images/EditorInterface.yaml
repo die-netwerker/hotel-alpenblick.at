@@ -1,0 +1,35 @@
+name: netwerk/teaser-4images
+typeName: netwerk_teaser4images
+title: 'Teaser - 4 Bilder'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: palette_teaser-4images_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: header
+        label: 'Überschrift'
+        type: Textarea
+        rows: 2
+      - identifier: subheader
+        label: 'Überüberschrift'
+        useExistingField: true
+      - type: Linebreak
+      - identifier: button_label
+        type: Text
+        label: 'Beschriftung'
+        placeholder: 'Mehr details'
+      - identifier: button_typolink
+        type: Link
+        label: 'Link '
+  - identifier: palette_teaser-4images_image
+    type: Palette
+    label: 'Media'
+    fields:
+      - identifier: image
+        label: 'Bild'
+        type: File

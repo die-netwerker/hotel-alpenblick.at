@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="icontext" href="EXT:nw_template/Resources/Public/Css/icontext.min.css" />
+        <ul>
+            <f:for each="{data.icontext}" as="icontext" iteration="iterator">
+                <li>
+                    <f:if condition="{icontext.icontext_svg}">
+                        <f:cObject typoscriptObjectPath="lib.inline_svg" data="{src:'fileadmin{icontext.icontext_svg.0.identifier}'}" />
+                    </f:if>
+                    <f:if condition="{icontext.bodytext}">
+                        <div>{icontext.bodytext -> f:format.html()}</div>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</html>

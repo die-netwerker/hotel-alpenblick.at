@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="teaser4images" href="EXT:nw_template/Resources/Public/Css/teaser4images.min.css" />
+        <f:if condition="{data.image.0}">
+            <picture>
+                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1160c', height:'860c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2320c', height:'1720c', fileExtension:'webp')} 2x" width="1160" height="860">
+                <img src="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1160c', height:'860c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2320c', height:'1720c', fileExtension:'webp')} 2x" width="1160" height="860" alt="{data.image.0.alternative}" title="{data.image.0.title}" loading="lazy" />
+            </picture>
+        </f:if>
+        <f:if condition="{data.image.1}">
+            <picture>
+                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'560c', height:'416c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'1120c', height:'832c', fileExtension:'webp')} 2x" width="560" height="416">
+                <img src="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'560c', height:'416c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'1120c', height:'832c', fileExtension:'webp')} 2x" width="560" height="416" alt="{data.image.1.alternative}" title="{data.image.1.title}" loading="lazy" />
+            </picture>
+        </f:if>
+        <f:if condition="{data.image.2}">
+            <picture>
+                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'560c', height:'640c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'1120c', height:'1280c', fileExtension:'webp')} 2x" width="560" height="640">
+                <img src="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'560c', height:'640c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'1120c', height:'1280c', fileExtension:'webp')} 2x" width="560" height="640" alt="{data.image.2.alternative}" title="{data.image.2.title}" loading="lazy" />
+            </picture>
+        </f:if>
+        <f:if condition="{data.image.3}">
+            <picture>
+                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'1025c', height:'655c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'2050c', height:'1310c', fileExtension:'webp')} 2x" width="1025" height="655">
+                <img src="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'1025c', height:'655c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'2050c', height:'1310c', fileExtension:'webp')} 2x" width="1025" height="655" alt="{data.image.3.alternative}" title="{data.image.3.title}" loading="lazy" />
+            </picture>
+        </f:if>
+        <div class="content">
+            <f:if condition="{data.header} || {data.subheader}">
+                <header>
+                    <f:if condition="{data.subheader}"><p>{data.subheader}</p></f:if>
+                    <f:if condition="{data.header}"><h2>{data.header -> f:format.nl2br()}</h2></f:if>
+                </header>
+            </f:if>
+            <f:if condition="{data.button_label} || {data.button_typolink}">
+                <p class="button">
+                    <f:link.typolink parameter="{data.button_typolink}">
+                        <f:if condition="{data.button_label}">
+                            <f:then>{data.button_label}</f:then>
+                            <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                        </f:if>
+                    </f:link.typolink>
+                </p>
+            </f:if>
+        </div>
+    </div>
+</html>
