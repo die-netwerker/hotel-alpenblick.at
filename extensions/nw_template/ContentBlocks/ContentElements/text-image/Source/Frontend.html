@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType} frame-layout-{data.optic}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="textimage" href="EXT:nw_template/Resources/Public/Css/textimage.min.css" />
+        <div class="content">
+            <f:if condition="{data.header} || {data.subheader}">
+                <header>
+                    <f:if condition="{data.subheader}"><p>{data.subheader}</p></f:if>
+                    <f:if condition="{data.header}"><h2>{data.header -> f:format.nl2br()}</h2></f:if>
+                </header>
+            </f:if>
+            <f:if condition="{data.bodytext}">{data.bodytext -> f:format.html()}</f:if>
+            <f:if condition="{data.button_label} || {data.button_typolink}">
+                <p class="button">
+                    <f:link.typolink parameter="{data.button_typolink}">
+                        <f:if condition="{data.button_label}">
+                            <f:then>{data.button_label}</f:then>
+                            <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                        </f:if>
+                    </f:link.typolink>
+                </p>
+            </f:if>
+        </div>
+        <f:if condition="{data.image}">
+            <picture>
+                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'870c', height:'700c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1740c', height:'1400c', fileExtension:'webp')} 2x" width="870" height="700">
+                <img src="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'870c', height:'700c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1740c', height:'1400c', fileExtension:'webp')} 2x" width="870" height="700" alt="{data.image.0.alternative}" title="{data.image.0.title}" loading="lazy" />
+            </picture>
+        </f:if>
+    </div>
+</html>

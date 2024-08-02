@@ -94,4 +94,9 @@
             text-transform: uppercase;
         }
     }
+    @media (max-width: 1400px) {
+        .top-right {
+            column-gap: base.$margin_40;
+        }
+    }
 }

@@ -1,0 +1,57 @@
+name: netwerk/text-image
+typeName: netwerk_textimage
+title: 'Text - Bild'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: palette_text-image_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: subheader
+        useExistingField: true
+        label: 'Überüberschrift'
+      - type: Linebreak
+      - identifier: header
+        type: Textarea
+        label: 'Überschrift'
+        rows: 2
+      - type: Linebreak
+      - identifier: bodytext
+        useExistingField: true
+        enableRichtext: true
+        label: 'Text'
+  - identifier: palette_text-image_button
+    type: Palette
+    label: 'Button'
+    fields:
+      - identifier: button_label
+        type: Text
+        label: 'Beschriftung'
+        placeholder: 'Mehr erfahren'
+      - identifier: button_typolink
+        type: Link
+        label: 'Link'
+  - identifier: palette_text-image_image
+    type: Palette
+    label: 'Media'
+    fields:
+      - identifier: image
+        useExistingField: true
+        label: 'Bild'
+  - identifier: palette_text-image_settings
+    type: Palette
+    label: 'Einstellungen'
+    fields:
+      - identifier: optic
+        type: Select
+        renderType: selectSingle
+        label: 'Layout'
+        items:
+          - label: 'Text links - Bild rechts'
+            value: 'image_right'
+          - label: 'Bild links - Text rechts'
+            value: 'image_left'
