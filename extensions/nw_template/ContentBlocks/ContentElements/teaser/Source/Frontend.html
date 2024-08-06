@@ -1,38 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
         <f:asset.css identifier="teaser" href="EXT:nw_template/Resources/Public/Css/teaser.min.css" />
-        <f:asset.script identifier="isotope" src="EXT:nw_template/Resources/Public/JavaScript/jquery.isotope.min.js" />
-        <f:asset.script identifier="teaser">
-            <f:comment>jQuery('.frame-type-netwerk_teaser').each(function () {
-                var $teaser = jQuery('ul', this);
-                $teaser.isotope({
-                    itemSelector: '.netwerk_teaser-item',
-                    percentPosition: true,
-                    masonry: {
-                        columnWidth: '.netwerk_teaser-sizer',
-                        gutter: '.netwerk_teaser-gutter',
-                        horizontalOrder: true
-                    }
-                });
-                $teaser[0].addEventListener('load', (function () {
-                    var runs;
-                    var update = function () {
-                        $teaser.isotope('layout');
-                        runs = false;
-                    };
-                    return function () {
-                        if (!runs) {
-                            runs = true;
-                            setTimeout(update, 33);
-                        }
-                    };
-                }()), true);
-            });</f:comment>
-        </f:asset.script>
         <f:if condition="{data.teaser}">
             <ul>
-                <f:comment><li class="netwerk_teaser-sizer"></li>
-                <li class="netwerk_teaser-gutter"></li></f:comment>
                 <f:for each="{data.teaser}" as="teaser" iteration="iterator">
                     <li class="netwerk_teaser-item">
                         <f:link.typolink parameter="{teaser.typolink}">

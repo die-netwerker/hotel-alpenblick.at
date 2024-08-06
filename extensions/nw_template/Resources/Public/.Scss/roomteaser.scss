@@ -1,0 +1,52 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_roomteaser {
+    width: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
+    ul {
+        @include mixins.flexbox($j_content:center, $a_items:center, $c_gap:36px, $r_gap:base.$margin_64, $f_wrap:wrap);
+        list-style: none;
+        li {
+            width: calc((100% - 36px) / 2);
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .content {
+        position: relative;
+        margin-left: base.$margin_64;
+        margin-right: base.$margin_64;
+        padding: base.$margin_40;
+        background: #fff;
+        margin-top: calc(base.$margin_100 * -1);
+        p {
+            &.header {
+                @include mixins.text($font_size:base.$fontsize_40);
+                font-family: base.$font_2;
+                text-transform: uppercase
+            }
+            &.textsmall {
+                @include mixins.subheader();
+                text-transform: uppercase;
+                font-family: base.$font_2;
+                margin-top: 10px;
+            }
+            &.textbig {
+                @include mixins.header($size:base.$fontsize_40);
+                margin-top: 10px;
+            }
+        }
+        .buttons {
+            @include mixins.flexbox($j_content:flex-start, $f_direction:row, $c_gap:36px);
+            @include mixins.button();
+            margin-top: 30px;
+            a {
+                width: calc((100% - 36px) / 2);
+                text-align: center;
+            }
+        }
+    }
+}

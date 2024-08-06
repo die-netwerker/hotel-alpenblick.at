@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="imagesletters" href="EXT:nw_template/Resources/Public/Css/imagesletters.min.css" />
+        <f:if condition="{data.header}">
+            <header>
+                <f:if condition="{data.header}"><h2>{data.header}</h2></f:if>
+            </header>
+        </f:if>
+        <ul>
+            <f:for each="{data.image}" as="image" iteration="iterator">
+                <li>
+                    <picture>
+                        <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{image}', treatIdAsReference:'true', width:'422c', height:'540c', fileExtension:'webp')}, {f:uri.image(image:'{image}', treatIdAsReference:'true', width:'844c', height:'1080c', fileExtension:'webp')} 2x" width="422" height="540">
+                        <img src="{f:uri.image(image:'{image}', treatIdAsReference:'true', width:'422c', height:'540c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{image}', treatIdAsReference:'true', width:'844c', height:'1080c', fileExtension:'webp')} 2x" width="422" height="540" alt="{image.alternative}" title="{image.title}" loading="lazy" />
+                    </picture>
+                    <p>{image.description}</p>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</html>

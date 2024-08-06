@@ -1,0 +1,15 @@
+name: netwerk/images-letters
+typeName: netwerk_imagesletters
+title: '4 Bilder - Buchstaben'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: image
+    useExistingField: true
+    label: 'Bilder'
+    maxitems: 4

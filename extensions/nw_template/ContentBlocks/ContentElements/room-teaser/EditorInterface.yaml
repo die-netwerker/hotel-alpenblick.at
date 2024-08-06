@@ -1,0 +1,55 @@
+name: netwerk/room-teaser
+typeName: netwerk_roomteaser
+title: 'Zimmer Teaser'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: roomteaser
+    type: Collection
+    label: 'Zimmer Teaser'
+    labelField: header
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: palette_roomteaser_content
+        type: Palette
+        label: 'Inhalt'
+        fields:
+        - identifier: header
+          type: Text
+          label: 'Überschrift'
+        - identifier: textsmall
+          label: 'Text klein (z.B. Größe - Personen)'
+          type: Text
+          placeholder: '18 m² / für 1-2 Personen'
+        - identifier: textbig
+          label: 'Text groß (z.B. ab Preis)'
+          type: Text
+          placeholder: 'ab €XXX ,- pro Person/Tag'
+        - type: Linebreak
+        - identifier: button1_label
+          type: Text
+          label: 'Beschriftung - Button 1'
+          placeholder: 'Mehr details'
+        - identifier: button1_typolink
+          type: Link
+          label: 'Link - Button 1'
+        - type: Linebreak
+        - identifier: button2_label
+          type: Text
+          label: 'Beschriftung - Button 2'
+          placeholder: 'Zimmer buchen'
+        - identifier: button2_typolink
+          type: Link
+          label: 'Link - Button 2'
+      - identifier: palette_roomteaser_image
+        type: Palette
+        label: 'Media'
+        fields:
+          - identifier: image
+            label: 'Bild'
+            type: File

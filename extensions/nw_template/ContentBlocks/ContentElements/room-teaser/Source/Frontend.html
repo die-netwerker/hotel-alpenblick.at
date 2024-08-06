@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="roomteaser" href="EXT:nw_template/Resources/Public/Css/roomteaser.min.css" />
+        <ul>
+            <f:for each="{data.roomteaser}" as="roomteaser" iteration="iterator">
+                <li>
+                    <f:if condition="{roomteaser.image}">
+                        <picture>
+                            <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'830c', height:'530c', fileExtension:'webp')}, {f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'1660c', height:'1060c', fileExtension:'webp')} 2x" width="830" height="530">
+                            <img src="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'830c', height:'530c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'1660c', height:'1060c', fileExtension:'webp')} 2x" width="830" height="530" alt="{roomteaser.image.0.alternative}" title="{roomteaser.image.0.title}" loading="lazy" />
+                        </picture> 
+                    </f:if>
+                    <div class="content">
+                        <f:if condition="{roomteaser.header}"><p class="header">{roomteaser.header}</p></f:if>
+                        <f:if condition="{roomteaser.textsmall}"><p class="textsmall">{roomteaser.textsmall}</p></f:if>
+                        <f:if condition="{roomteaser.textbig}"><p class="textbig">{roomteaser.textbig}</p></f:if>
+                        <f:if condition="{roomteaser.button1_typolink} || {roomteaser.button2_typolink}">
+                            <div class="buttons">
+                                <f:if condition="{roomteaser.button1_typolink}">
+                                    <f:link.typolink parameter="{roomteaser.button1_typolink}">
+                                        <f:if condition="{roomteaser.button1_label}">
+                                            <f:then>{roomteaser.button1_label}</f:then>
+                                            <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                                        </f:if>
+                                    </f:link.typolink>
+                                </f:if>
+                                <f:if condition="{roomteaser.button2_typolink}">
+                                    <f:link.typolink parameter="{roomteaser.button2_typolink}">
+                                        <f:if condition="{roomteaser.button2_label}">
+                                            <f:then>{roomteaser.button2_label}</f:then>
+                                            <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                                        </f:if>
+                                    </f:link.typolink>
+                                </f:if>
+                            </div>
+                        </f:if>
+                    </div>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</html>
