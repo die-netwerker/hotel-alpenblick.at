@@ -44,6 +44,11 @@ body {
     .frame-space-after-large {
         padding-bottom: base.$margin_150
     }
+    & > div {
+        &:last-child {
+            padding-bottom: 200px;
+        }
+    }
 }
 #footer {
     display: grid;

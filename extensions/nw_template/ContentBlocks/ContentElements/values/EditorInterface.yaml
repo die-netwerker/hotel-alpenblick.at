@@ -1,0 +1,41 @@
+name: netwerk/values
+typeName: netwerk_values
+title: 'Werte - USPs'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Überschrift'
+  - identifier: subheader
+    useExistingField: true
+    label: 'Überüberschrift'
+  - identifier: values
+    type: Collection
+    label: 'Werte'
+    labelField: text
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: svg
+        type: File
+        label: 'Grafik'
+        allowed: svg
+      - identifier: text
+        type: Textarea
+        label: 'Text'
+        rows: 2
+  - identifier: palette_values_settings
+    type: Palette
+    label: 'Einstellungen'
+    fields:
+    - identifier: background
+      type: Checkbox
+      renderType: checkboxToggle
+      label: 'Hintergrund'
+      items:
+        - label: 'Terracotta Hintergrund'

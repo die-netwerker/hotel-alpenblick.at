@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.background}', then:' frame-background')}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="values" href="EXT:nw_template/Resources/Public/Css/values.min.css" />
+        <f:if condition="{data.header} || {data.subheader}">
+            <header>
+                <f:if condition="{data.subheader}"><p>{data.subheader}</p></f:if>
+                <f:if condition="{data.header}"><h2>{data.header}</h2></f:if>
+            </header>
+        </f:if>
+        <ul>
+            <f:for each="{data.values}" as="value" iteration="iterator">
+                <li>
+                    <f:if condition="{value.svg}">
+                        <div class="icon">
+                            <f:cObject typoscriptObjectPath="lib.inline_svg" data="{src:'fileadmin{value.svg.0.identifier}'}" />
+                        </div>
+                    </f:if>
+                    <f:if condition="{value.text}"><p class="text">{value.text -> f:format.nl2br()}</p></f:if>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</html>
