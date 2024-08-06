@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="gallery" href="EXT:nw_template/Resources/Public/Css/gallery.min.css" />
+        <f:asset.css identifier="glightbox" href="EXT:nw_template/Resources/Public/Css/glightbox.min.css" />
+        <f:asset.script identifier="glightbox" src="EXT:nw_template/Resources/Public/JavaScript/glightbox.min.js" />
+        <f:asset.script identifier="isotope" src="EXT:nw_template/Resources/Public/JavaScript/jquery.isotope.min.js" />
+        <f:asset.script identifier="gallery">
+            jQuery('.frame-type-netwerk_gallery').each(function () {
+                var $gallery = jQuery('.gallery-images', this);
+                $gallery.isotope({
+                    itemSelector: '.gallery-image',
+                    percentPosition: true,
+                    masonry: {
+                        columnWidth: '.gallery-sizer',
+                        gutter: '.gallery-gutter'
+                    }
+                });
+                $gallery[0].addEventListener('load', (function () {
+                    var runs;
+                    var update = function () {
+                        $gallery.isotope('layout');
+                        runs = false;
+                    };
+                    return function () {
+                        if (!runs) {
+                            runs = true;
+                            setTimeout(update, 33);
+                        }
+                    };
+                }()), true);
+            });
+    
+            // glightbox
+            const lightbox = GLightbox({
+                zoomable: false
+            });
+        </f:asset.script>
+        <f:if condition="{data.image}">
+            <ul class="gallery-images">
+                <li class="gallery-sizer"></li>
+                <li class="gallery-gutter"></li>
+                <f:for each="{data.image}" as="file">
+                    <li class="gallery-image">
+                        <a href="{f:uri.image(image:'{file}', treatIdAsReference:'true', height:'1080', fileExtension:'webp')}" class="glightbox" data-glightbox="title: {file.tile}">
+                            <f:switch expression="{data.gallery_layout}">
+                                <f:case value="0">
+                                    <f:variable name="gallery_height" value="{388 * file.properties.height / file.properties.width}" />
+                                    <picture>
+                                        <source media="(max-width: 420px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'177c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'354c', fileExtension:'webp')} 2x">
+                                        <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'334c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'668c', fileExtension:'webp')} 2x">
+                                        <source media="(max-width: 1000px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'273c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'546c', fileExtension:'webp')} 2x">
+                                        <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'236c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'472c', fileExtension:'webp')} 2x">
+                                        <img src="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'341c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'682c', fileExtension:'webp')} 2x" width="341" height="{gallery_height -> f:format.number(decimals:'0', thousandsSeparator:'')}" alt="{file.alternative}" title="{file.title}" loading="lazy" />
+                                    </picture>
+                                </f:case>
+                                <f:case value="1">
+                                    <picture>
+                                        <source media="(max-width: 420px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'177c', height:'118c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'354c', height:'236c', fileExtension:'webp')} 2x">
+                                        <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'334c', height:'223c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'668c', height:'446c', fileExtension:'webp')} 2x">
+                                        <source media="(max-width: 1000px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'273c', height:'182c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'546c', height:'364c', fileExtension:'webp')} 2x">
+                                        <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'236c', height:'157c', fileExtension:'webp')}, {f:uri.image(image:'{file}', treatIdAsReference:'true', width:'472c', height:'314c', fileExtension:'webp')} 2x">
+                                        <img src="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'341c', height:'228c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{file}', treatIdAsReference:'true', width:'682c', height:'456c', fileExtension:'webp')} 2x" width="341" height="228" alt="{file.alternative}" title="{file.title}" loading="lazy" />
+                                    </picture>
+                                </f:case>
+                            </f:switch>
+                        </a>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</html>

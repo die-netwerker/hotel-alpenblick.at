@@ -1,0 +1,20 @@
+name: netwerk/gallery
+typeName: netwerk_gallery
+title: 'Galerie'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: gallery_layout
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Mosaik'
+        value: 0
+      - label: '3:2'
+        value: 1
+  - identifier: image
+    useExistingField: true
+    label: 'Bild'
