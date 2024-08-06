@@ -1,0 +1,18 @@
+plugin {
+  tx_form {
+    settings {
+      yamlConfigurations {
+        1605042806 = EXT:nw_template/Configuration/Form/formsetup.yaml
+      }
+    }
+  }
+}
+module {
+  tx_form {
+    settings {
+      yamlConfigurations {
+        1605042806 = EXT:nw_template/Configuration/Form/formsetup.yaml
+      }
+    }
+  }
+}

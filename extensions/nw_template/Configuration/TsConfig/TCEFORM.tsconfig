@@ -7,9 +7,9 @@ TCEFORM {
   tt_content {
 
     ### remove ctypes (http://better-code.com/typo3-template-tutorial/contentelemente-ausblenden/)
-    ### menu_sitemap
+    ### menu_sitemap, form_formframework
     CType {
-      removeItems = header, text, image, textpic, textmedia, form_formframework, uploads, bullets, table, menu_abstract, menu_categorized_content, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap_pages, menu_categorized_pages, menu_subpages, menu_pages, felogin_login
+      removeItems = header, text, image, textpic, textmedia, uploads, bullets, table, menu_abstract, menu_categorized_content, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap_pages, menu_categorized_pages, menu_subpages, menu_pages, felogin_login
     }
 
     ### ce layouts

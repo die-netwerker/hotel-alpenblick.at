@@ -1,0 +1,25 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedFileMounts:
+          10:
+        allowedExtensionPaths:
+          10: EXT:nw_template/Configuration/Form/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: EXT:nw_template/Resources/Private/Form/Templates/
+                partialRootPaths:
+                  20: EXT:nw_template/Resources/Private/Form/Partials/
+                layoutRootPaths:
+                  20: EXT:nw_template/Resources/Private/Form/Layouts/
+                translation:
+                  translationFiles:
+                    20: EXT:nw_template/Resources/Private/Form/Languages/form.xlf

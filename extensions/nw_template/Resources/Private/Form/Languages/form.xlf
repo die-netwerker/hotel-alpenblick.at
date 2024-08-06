@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="en" datatype="plaintext" original="messages" date="2018-09-08T12:46:21Z" product-name="form">
+        <header/>
+        <body>
+            <trans-unit id="form.hello">
+                <source>Hello</source>
+            </trans-unit>
+            <trans-unit id="form.pretext">
+                <source>Your request from</source>
+            </trans-unit>
+            <trans-unit id="form.emailok">
+                <source>You get this to see your enquiry was sucessfully transmitted to us.</source>
+            </trans-unit>
+
+            <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+                <source>Send</source>
+            </trans-unit>
+
+            <trans-unit id="element.statictext_information.properties.label">
+                <source>Information about your stay</source>
+            </trans-unit>
+            <trans-unit id="element.statictext_contactdetails.properties.label">
+                <source>Your contact details</source>
+            </trans-unit>
+            <trans-unit id="element.statictext-1.properties.label">
+                <source>Aparthouese &amp; Chalets</source>
+            </trans-unit>
+
+            <trans-unit id="element.arrival.properties.label">
+                <source>Arrival</source>
+            </trans-unit>
+            <trans-unit id="element.departure.properties.label">
+                <source>Departure</source>
+            </trans-unit>
+
+            <trans-unit id="element.persons.properties.label">
+                <source>Nr. of persons</source>
+            </trans-unit>
+            <trans-unit id="element.adults.properties.label">
+                <source>Nr. of adults</source>
+            </trans-unit>
+
+            <trans-unit id="element.requestfor.properties.label">
+                <source>Request for ...</source>
+            </trans-unit>
+            <trans-unit id="element.requestfor.properties.prependOptionLabel">
+                <source>- Please choose -</source>
+            </trans-unit>
+            <trans-unit id="element.requestfor.properties.options.1">
+                <source>Aparthouse &amp; Chalets</source>
+            </trans-unit>
+            <trans-unit id="element.requestfor.properties.options.2">
+                <source>Camping</source>
+            </trans-unit>
+
+            <trans-unit id="element.appartements-select.properties.label">
+                <source>Apartments</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.1">
+                <source>Apartment Earth I</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.2">
+                <source>Apartment Earth II</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.3">
+                <source>Apartment Fire</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.4">
+                <source>Apartment Wood</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.5">
+                <source>Apartment Water</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.6">
+                <source>Apartment Metal</source>
+            </trans-unit>
+            <trans-unit id="element.appartements-select.properties.options.7">
+                <source>Penthouse</source>
+            </trans-unit>
+
+            <trans-unit id="element.chalets-select.properties.label">
+                <source>Chalets</source>
+            </trans-unit>
+            <trans-unit id="element.chalets-select.properties.options.8">
+                <source>Chalet Apple</source>
+            </trans-unit>
+            <trans-unit id="element.chalets-select.properties.options.9">
+                <source>Chalet Nut</source>
+            </trans-unit>
+            <trans-unit id="element.chalets-select.properties.options.10">
+                <source>Chalet Pear</source>
+            </trans-unit>
+            <trans-unit id="element.chalets-select.properties.options.11">
+                <source>Chalet Grape</source>
+            </trans-unit>
+
+            <trans-unit id="element.rooms-select.properties.label">
+                <source>Rooms</source>
+            </trans-unit>
+            <trans-unit id="element.rooms-select.properties.options.12">
+                <source>Double room</source>
+            </trans-unit>
+            <trans-unit id="element.rooms-select.properties.options.13">
+                <source>Twin room</source>
+            </trans-unit>
+
+            <trans-unit id="element.campsite.properties.label">
+                <source>Which pitch would you like?</source>
+            </trans-unit>
+            <trans-unit id="element.campsite.properties.prependOptionLabel">
+                <source>- Please choose -</source>
+            </trans-unit>
+            <trans-unit id="element.campsite.properties.options.1">
+                <source>Campsite</source>
+            </trans-unit>
+            <trans-unit id="element.campsite.properties.options.2">
+                <source>Half-year site</source>
+            </trans-unit>
+            <trans-unit id="element.camping-category.properties.label">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="element.camping-category.properties.options.1">
+                <source>Standard</source>
+            </trans-unit>
+            <trans-unit id="element.camping-category.properties.options.2">
+                <source>Panorama</source>
+            </trans-unit>
+            <trans-unit id="element.camping-category.properties.options.3">
+                <source>Comfort</source>
+            </trans-unit>
+            <trans-unit id="element.size.properties.label">
+                <source>Dimensions of the caravan/motorhome or tent</source>
+            </trans-unit>
+            <trans-unit id="element.car.properties.label">
+                <source>Electric car or combustion engine</source>
+            </trans-unit>
+            <trans-unit id="element.car.properties.prependOptionLabel">
+                <source>- Please choose -</source>
+            </trans-unit>
+            <trans-unit id="element.car.properties.options.1">
+                <source>Electric car</source>
+            </trans-unit>
+            <trans-unit id="element.car.properties.options.2">
+                <source>Combustion engine</source>
+            </trans-unit>
+            <trans-unit id="element.dog.properties.label">
+                <source>Dog</source>
+            </trans-unit>
+            <trans-unit id="element.dog.properties.prependOptionLabel">
+                <source>- Please choose -</source>
+            </trans-unit>
+            <trans-unit id="element.dog.properties.options.yes">
+                <source>Yes</source>
+            </trans-unit>
+            <trans-unit id="element.dog.properties.options.no">
+                <source>No</source>
+            </trans-unit>
+
+            <trans-unit id="element.salutation.properties.label">
+                <source>Salutation</source>
+            </trans-unit>
+            <trans-unit id="element.salutation.properties.prependOptionLabel">
+                <source>- Please choose -</source>
+            </trans-unit>
+            <trans-unit id="element.salutation.properties.options.herr">
+                <source>Mr.</source>
+            </trans-unit>
+            <trans-unit id="element.salutation.properties.options.frau">
+                <source>Mrs.</source>
+            </trans-unit>
+            <trans-unit id="element.salutation.properties.options.divers">
+                <source>Diverse</source>
+            </trans-unit>
+
+            <trans-unit id="element.firstname.properties.label">
+                <source>Firstname</source>
+            </trans-unit>
+            <trans-unit id="element.lastname.properties.label">
+                <source>Lastname</source>
+            </trans-unit>
+
+            <trans-unit id="element.email.properties.label">
+                <source>E-Mail</source>
+            </trans-unit>
+            <trans-unit id="element.phone.properties.label">
+                <source>Phone</source>
+            </trans-unit>
+
+            <trans-unit id="element.street.properties.label">
+                <source>Street</source>
+            </trans-unit>
+            <trans-unit id="element.postcode.properties.label">
+                <source>Postcode</source>
+            </trans-unit>
+            <trans-unit id="element.city.properties.label">
+                <source>City</source>
+            </trans-unit>
+            <trans-unit id="element.country.properties.label">
+                <source>Country</source>
+            </trans-unit>
+
+            <trans-unit id="element.comment.properties.label">
+                <source>Comment</source>
+            </trans-unit>
+
+            <trans-unit id="element.privacy.properties.label">
+                <source>I have read the %s.</source>
+            </trans-unit>
+            <trans-unit id="element.privacy.properties.linkText">
+                <source>privacy policy</source>
+            </trans-unit>
+
+            <trans-unit id="form.mail_subject">
+                <source>Your request</source>
+            </trans-unit>
+            <trans-unit id="form.mail_package_subject">
+                <source>Your package request</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -2,7 +2,8 @@
 @import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
 @import 'EXT:cs_seo/Configuration/TypoScript/setup.typoscript'
-@import 'EXT:pagelist/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:form/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:form_element_linked_checkbox/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:min/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:nw_template/Configuration/TypoScript/Setup/*.typoscript'
 
