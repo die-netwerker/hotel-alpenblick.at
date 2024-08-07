@@ -1,0 +1,221 @@
+@use 'base';
+@use 'mixins';
+
+.frame-type-form_formframework {
+    width: 100%;
+    background: #fff;
+    form {
+        @extend %frame_1455;
+        margin: 0 auto;
+    }
+    .row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        row-gap: base.$margin_40;
+        margin-bottom: base.$margin_88;
+        & > div {
+            flex: 0 0 auto;
+            &.col-2 {
+                width: calc((100% - 150px) / 6);
+            }
+            &.col-3 {
+                width: calc((100% - 90px) / 4);
+            }
+            &.col-4 {
+                width: calc((100% - 60px) / 3);
+            }
+            &.col-6 {
+                width: calc((100% - 30px) / 2);
+            }
+            &.col-12 {
+                width: 100%;
+            }
+        }
+        @media (max-width: 1200px) {
+            & > div {
+                &.col-md-12 {
+                    width: 100%;
+                }
+                &.col-md-6 {
+                    width: calc((100% - 30px) / 2);
+                }
+            }
+        }
+        @media (max-width: 800px) {
+            & > div {
+                &.col-2, &.col-3, &.col-4, &.col-6, &.col-12,
+                &.col-md-6, &.col-md-12 {
+                    width: 100%
+                }
+            }
+        }
+    }
+    .statictext {
+        font-size: base.$fontsize_20;
+        line-height: 1.2;
+        color: base.$color_2;
+        margin-top: base.$margin_64;
+        margin-bottom: clamp(1rem, 0.475rem + 1.4vw, 1.875rem);
+    }
+    label {
+        @include mixins.subheader();
+        text-transform: uppercase;
+        font-family: base.$font_2;
+    }
+    input:not([type="checkbox"], [type="radio"]), select, textarea {
+        appearance: unset;
+        border: unset;
+        border-bottom: 1px solid base.$color_1;
+        border-radius: 0;
+        background-color: transparent;
+        display: inline-block;
+        width: 100%;
+        color: #7E7D7D;
+        font-size: base.$fontsize_20;
+        font-family: base.$font_1;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+    }
+    .input:has([type="number"]) {
+        input[type="number"] {
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                appearance: none;
+            }
+            & + .plus-minus {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                z-index: 1;
+                height: calc(100% - 7px);
+                li {
+                    font-family: base.$font_2;
+                    font-size: base.$fontsize_40;
+                    line-height: 100%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    input:not([type="checkbox"]), select, textarea {
+        padding-right: 44px;
+        padding-bottom: 7px;
+    }
+    button {
+        display: inline-block;
+		font-weight: 400;
+		font-size: base.$fontsize_20;
+        font-family: base.$font_1;
+		line-height: 1.2;
+		color: base.$color_1;
+		border: 2px solid base.$color_1;
+		text-transform: uppercase;
+		letter-spacing: .5px;
+		text-decoration: unset;
+		padding: 6px 15px;
+		background-color: transparent;
+		border-radius: 100px;
+        cursor: pointer;
+    }
+    .input.checkbox {
+        .form-check {
+            label {
+                color: #7E7D7D;
+                font-size: base.$fontsize_20;
+                font-family: base.$font_1;
+                line-height: 1.2;
+                letter-spacing: 0.5px;
+                font-weight: 400;
+                text-transform: unset;
+                a {
+                    color: #7E7D7D;
+                }
+                & > span {
+                    padding-left: 48px;
+                    display: block;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid #707070;
+                        flex-shrink: 0;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+            input:checked~span::before {
+                background: #707070;
+                content: '✓';
+            }
+            input {
+                display: none;
+            }
+        }
+    }
+    .input:not([type="checkbox"]) {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            height: calc(100% - 7px);
+            width: 24px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top:0;
+            right: 20px;
+        }
+        &:has(.arrival, .departure) {
+            &::after {
+                background-image: url(../Images/calender.svg);
+            }
+        }
+        &:has(select) {
+            &::after {
+                background-image: url(../Images/arrow-form.svg);
+            }
+        }
+        &:has([type=tel]) {
+            &::after {
+                background-image: url(../Images/phone-form.svg);
+            }
+        }
+        &:has([type=email]) {
+            &::after {
+                background-image: url(../Images/email-form.svg);
+            }
+        }
+    }
+    /*.arrival, .departure {
+        background-image: url(../Images/calender.svg);
+        background-position: top right;
+        background-size: auto calc(100% - 7px);
+        background-repeat: no-repeat;
+    }
+    select {
+        background-image: url(../Images/arrow-form.svg);
+        background-position: top right;
+        background-size: auto calc(100% - 7px);
+        background-repeat: no-repeat;
+    }*/
+}

@@ -17,8 +17,8 @@
             </trans-unit>
             
             <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
-                <source>Send</source>
-                <target>Senden</target>
+                <source>Send request</source>
+                <target>Anfrage absenden</target>
             </trans-unit>
 
             <trans-unit id="element.statictext_information.properties.label">
@@ -28,10 +28,6 @@
             <trans-unit id="element.statictext_contactdetails.properties.label">
                 <source>Your contact details</source>
                 <target>Ihre Kontaktdaten</target>
-            </trans-unit>
-            <trans-unit id="element.statictext-1.properties.label">
-                <source>Aparthouese &amp; Chalets</source>
-                <target>Aparthaus &amp; Chalets</target>
             </trans-unit>
 
             <trans-unit id="element.arrival.properties.label">
@@ -51,166 +47,14 @@
                 <source>Nr. of adults</source>
                 <target>Anzahl Erwachsene</target>
             </trans-unit>
-            
-            <trans-unit id="element.requestfor.properties.label">
-                <source>Request for ...</source>
-                <target>Anfrage für ...</target>
-            </trans-unit>
-            <trans-unit id="element.requestfor.properties.prependOptionLabel">
-                <source>- Please choose -</source>
-                <target>- Bitte wählen -</target>
-            </trans-unit>
-            <trans-unit id="element.requestfor.properties.options.1">
-                <source>Aparthouese &amp; Chalets</source>
-                <target>Aparthaus &amp; Chalets</target>
-            </trans-unit>
-            <trans-unit id="element.requestfor.properties.options.2">
-                <source>Camping</source>
-                <target>Camping</target>
-            </trans-unit>
-
-            <trans-unit id="element.appartements-select.properties.label">
-                <source>Apartments</source>
-                <target>Appartements</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.1">
-                <source>Apartment Earth I</source>
-                <target>Appartement Erde I</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.2">
-                <source>Apartment Earth II</source>
-                <target>Appartement Erde II</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.3">
-                <source>Apartment Fire</source>
-                <target>Appartement Feuer</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.4">
-                <source>Apartment Wood</source>
-                <target>Appartement Holz</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.5">
-                <source>Apartment Water</source>
-                <target>Appartement Wasser</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.6">
-                <source>Apartment Metal</source>
-                <target>Appartement Metall</target>
-            </trans-unit>
-            <trans-unit id="element.appartements-select.properties.options.7">
-                <source>Penthouse</source>
-                <target>Das Penthouse</target>
-            </trans-unit>
-
-            <trans-unit id="element.chalets-select.properties.label">
-                <source>Chalets</source>
-                <target>Chalets</target>
-            </trans-unit>
-            <trans-unit id="element.chalets-select.properties.options.8">
-                <source>Chalet Apple</source>
-                <target>Chalet Apfel</target>
-            </trans-unit>
-            <trans-unit id="element.chalets-select.properties.options.9">
-                <source>Chalet Nut</source>
-                <target>Chalet Nuss</target>
-            </trans-unit>
-            <trans-unit id="element.chalets-select.properties.options.10">
-                <source>Chalet Pear</source>
-                <target>Chalet Birne</target>
-            </trans-unit>
-            <trans-unit id="element.chalets-select.properties.options.11">
-                <source>Chalet Grape</source>
-                <target>Chalet Traube</target>
-            </trans-unit>
-
-            <trans-unit id="element.rooms-select.properties.label">
-                <source>Rooms</source>
-                <target>Zimmer</target>
-            </trans-unit>
-            <trans-unit id="element.rooms-select.properties.options.12">
-                <source>Double room</source>
-                <target>Doppelzimmer</target>
-            </trans-unit>
-            <trans-unit id="element.rooms-select.properties.options.13">
-                <source>Twin room</source>
-                <target>Zweibettzimmer</target>
-            </trans-unit>
-            <trans-unit id="element.campsite.properties.label">
-                <source>Which pitch would you like?</source>
-                <target>Welchen Stellplatz wünschen Sie?</target>
-            </trans-unit>
-            <trans-unit id="element.campsite.properties.prependOptionLabel">
-                <source>- Please choose -</source>
-                <target>- Bitte wählen -</target>
-            </trans-unit>
-            <trans-unit id="element.campsite.properties.options.1">
-                <source>Campsite</source>
-                <target>Stellplatz</target>
-            </trans-unit>
-            <trans-unit id="element.campsite.properties.options.2">
-                <source>Half-year site</source>
-                <target>Halbjahresstellplatz</target>
-            </trans-unit>
-            <trans-unit id="element.camping-category.properties.label">
-                <source>Category</source>
-                <target>Kategorie</target>
-            </trans-unit>
-            <trans-unit id="element.camping-category.properties.options.1">
-                <source>Standard</source>
-                <target>Standard</target>
-            </trans-unit>
-            <trans-unit id="element.camping-category.properties.options.2">
-                <source>Panorama</source>
-                <target>Panorama</target>
-            </trans-unit>
-            <trans-unit id="element.camping-category.properties.options.3">
-                <source>Comfort</source>
-                <target>Komfort</target>
-            </trans-unit>
-            <trans-unit id="element.size.properties.label">
-                <source>Dimensions of the caravan/motorhome or tent</source>
-                <target>Maße des Wohnwagens/Wohnmobil oder Zelt</target>
-            </trans-unit>
-            <trans-unit id="element.car.properties.label">
-                <source>Electric car or combustion engine</source>
-                <target>Elektroauto oder Verbrennermotor</target>
-            </trans-unit>
-            <trans-unit id="element.car.properties.prependOptionLabel">
-                <source>- Please choose -</source>
-                <target>- Bitte wählen -</target>
-            </trans-unit>
-            <trans-unit id="element.car.properties.options.1">
-                <source>Electric car</source>
-                <target>Elektroauto</target>
-            </trans-unit>
-            <trans-unit id="element.car.properties.options.2">
-                <source>Combustion engine</source>
-                <target>Verbrennermotor</target>
-            </trans-unit>
-            <trans-unit id="element.dog.properties.label">
-                <source>Dog</source>
-                <target>Hund</target>
-            </trans-unit>
-            <trans-unit id="element.dog.properties.prependOptionLabel">
-                <source>- Please choose -</source>
-                <target>- Bitte wählen -</target>
-            </trans-unit>
-            <trans-unit id="element.dog.properties.options.yes">
-                <source>Yes</source>
-                <target>Ja</target>
-            </trans-unit>
-            <trans-unit id="element.dog.properties.options.no">
-                <source>No</source>
-                <target>Nein</target>
-            </trans-unit>
 
             <trans-unit id="element.salutation.properties.label">
                 <source>Salutation</source>
                 <target>Anrede</target>
             </trans-unit>
             <trans-unit id="element.salutation.properties.prependOptionLabel">
-                <source>- Please choose -</source>
-                <target>- Bitte wählen -</target>
+                <source>--- please choose ---</source>
+                <target>--- bitte wählen ---</target>
             </trans-unit>
             <trans-unit id="element.salutation.properties.options.herr">
                 <source>Mr.</source>
@@ -261,17 +105,20 @@
             </trans-unit>
 
             <trans-unit id="element.comment.properties.label">
-                <source>Comment</source>
-                <target>Kommentar</target>
+                <source>Additional information or questions</source>
+                <target>Zusätzliche Angaben oder Fragen</target>
             </trans-unit>
-
+            <trans-unit id="element.news.properties.label">
+                <source>Please send me information about promotions and news by e-mail in the future.</source>
+                <target>Bitte sendet mir zukünftig Informationen über Aktionen und News per E-Mail zu.</target>
+            </trans-unit>
             <trans-unit id="element.privacy.properties.label">
-                <source>I have read the %s.</source>
-                <target>Ich habe die %s zur Kenntnis genommen.</target>
+                <source>I agree that the personal data entered by me may be processed by the data protection officer for the purpose of processing my request on the basis of my consent given by submitting the form. %s</source>
+                <target>Ich erkläre mich einverstanden, dass eine Verarbeitung der von mir eingegebenen personenbezogenen Daten durch den datenschutzrechtlich Verantwortlichen zum Zweck der Bearbeitung meiner Anfrage auf Grundlage meiner durch das Absenden des Formulars erteilten Einwilligung erfolgt. %s</target>
             </trans-unit>
             <trans-unit id="element.privacy.properties.linkText">
-                <source>privacy policy</source>
-                <target>Datenschutzerklärung</target>
+                <source>Further information</source>
+                <target>Weitere Informationen</target>
             </trans-unit>
 
             <trans-unit id="form.mail_subject">

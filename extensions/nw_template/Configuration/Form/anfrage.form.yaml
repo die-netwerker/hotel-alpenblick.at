@@ -10,7 +10,7 @@ finishers:
     options:
       subject: 'Anfrage Empfänger'
       recipients:
-        info@campingdorf.at: ''
+        christoph@netwerk.at: ''
       senderAddress: '{email}'
       senderName: '{salutation} {firstname} {lastname}'
       replyToRecipients:
@@ -68,13 +68,6 @@ renderables:
     label: ''
     renderables:
       -
-        properties:
-          text: ''
-          elementClassAttribute: statictext
-        type: StaticText
-        identifier: statictext_information
-        label: 'Informationen zu Ihrem Aufenthalt'
-      -
         type: GridRow
         identifier: gridrow-1
         label: 'Grid: Zeile'
@@ -105,11 +98,30 @@ renderables:
             validators:
               -
                 identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-2
-        label: 'Grid: Zeile'
-        renderables:
+          -
+            properties:
+              options:
+                room1: 'Zimmer 1'
+                room2: 'Zimmer 2'
+                room3: 'Zimmer 3'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xl:
+                    numbersOfColumnsToUse: ''
+                  md:
+                    numbersOfColumnsToUse: '12'
+                  xxl:
+                    numbersOfColumnsToUse: ''
+                  lg:
+                    numbersOfColumnsToUse: ''
+                  sm:
+                    numbersOfColumnsToUse: ''
+                  xs:
+                    numbersOfColumnsToUse: '6'
+              prependOptionLabel: '--- bitte wählen ---'
+            type: SingleSelect
+            identifier: roomcategory
+            label: Zimmerkategorie
           -
             defaultValue: '2'
             properties:
@@ -118,6 +130,14 @@ renderables:
                 min: '1'
                 max: '99'
                 required: required
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  lg:
+                    numbersOfColumnsToUse: ''
+                  md:
+                    numbersOfColumnsToUse: '6'
+                  xs:
+                    numbersOfColumnsToUse: '3'
             type: Number
             identifier: adults
             label: 'Anzahl Erwachsene'
@@ -138,6 +158,14 @@ renderables:
                 step: 1
                 min: '0'
                 max: '99'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xxl:
+                    numbersOfColumnsToUse: ''
+                  md:
+                    numbersOfColumnsToUse: '6'
+                  xs:
+                    numbersOfColumnsToUse: '3'
             type: Number
             identifier: children
             label: 'Anzahl Kinder'
@@ -149,144 +177,9 @@ renderables:
                   minimum: '0'
                   maximum: '99'
                 identifier: NumberRange
-          -
-            defaultValue: ''
-            type: Text
-            identifier: ages
-            label: 'Alter der Kinder'
-            properties:
-              elementDescription: ''
-              fluidAdditionalAttributes:
-                placeholder: '(z.B. 4 / 6 / 17)'
       -
         type: GridRow
-        identifier: gridrow-8
-        label: 'Grid: Zeile'
-        renderables:
-          -
-            properties:
-              options:
-                1: 'Aparthaus & Chalets'
-                2: Camping
-              fluidAdditionalAttributes:
-                required: required
-              prependOptionLabel: '- bitte wählen -'
-            type: SingleSelect
-            identifier: requestfor
-            label: 'Anfrage für ...'
-            validators:
-              -
-                identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-9
-        label: 'Grid: Zeile'
-        properties:
-          elementClassAttribute: 'row row-accommodations'
-        renderables:
-          -
-            properties:
-              text: ''
-              elementClassAttribute: statictext
-            type: StaticText
-            identifier: statictext-1
-            label: 'Aparthaus & Chalets'
-          -
-            properties:
-              options:
-                1: 'Appartement Erde I'
-                2: 'Appartement Erde II'
-                3: 'Appartement Feuer'
-                4: 'Appartement Holz'
-                5: 'Appartement Wasser'
-                6: 'Appartement Metall'
-                7: 'Das Penthouse'
-            type: MultiCheckbox
-            identifier: appartements-select
-            label: Appartements
-          -
-            properties:
-              options:
-                8: 'Chalet Apfel'
-                9: 'Chalet Nuss'
-                10: 'Chalet Birne'
-                11: 'Chalet Traube'
-            type: MultiCheckbox
-            identifier: chalets-select
-            label: Chalets
-          -
-            properties:
-              options:
-                12: Doppelzimmer
-                13: Zweibettzimmer
-            type: MultiCheckbox
-            identifier: rooms-select
-            label: Zimmer
-      -
-        type: GridRow
-        identifier: gridrow-10
-        label: 'Grid: Zeile'
-        properties:
-          elementClassAttribute: 'row row-camping'
-        renderables:
-          -
-            properties:
-              text: ''
-              elementClassAttribute: statictext
-            type: StaticText
-            identifier: statictext-2
-            label: Camping
-          -
-            properties:
-              options:
-                1: Stellplatz
-                2: 'Halbjahres Stellplatz'
-              prependOptionLabel: '- Bitte wählen -'
-            type: SingleSelect
-            identifier: campsite
-            label: 'Welchen Stellplatz wünschen Sie?'
-          -
-            properties:
-              options:
-                1: Standard
-                2: Panorama
-                3: Komfort
-            type: MultiCheckbox
-            identifier: camping-category
-            label: Kategorie
-          -
-            defaultValue: ''
-            type: Text
-            identifier: size
-            label: 'Maße des Wohnwagens/Wohnmobil oder Zelt'
-          -
-            properties:
-              options:
-                1: Elektroauto
-                2: Verbrennermotor
-              prependOptionLabel: '- Bitte wählen -'
-            type: SingleSelect
-            identifier: car
-            label: 'Elektroauto oder Verbrennermotor'
-          -
-            properties:
-              options:
-                'yes': Ja
-                'no': Nein
-              prependOptionLabel: '- Bitte wählen -'
-            type: SingleSelect
-            identifier: dog
-            label: Hund
-      -
-        properties:
-          text: ''
-          elementClassAttribute: statictext
-        type: StaticText
-        identifier: statictext_contactdetails
-        label: 'Ihre Kontaktdaten'
-      -
-        type: GridRow
-        identifier: gridrow-3
+        identifier: gridrow-2
         label: 'Grid: Zeile'
         renderables:
           -
@@ -297,10 +190,31 @@ renderables:
                 divers: Divers
               fluidAdditionalAttributes:
                 required: required
-              prependOptionLabel: '- Bitte wählen -'
+              prependOptionLabel: '--- bitte wählen ---'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xxl:
+                    numbersOfColumnsToUse: ''
+                  xs:
+                    numbersOfColumnsToUse: '6'
             type: SingleSelect
             identifier: salutation
             label: Anrede
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: phone
+            label: Telefon
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '6'
             validators:
               -
                 identifier: NotEmpty
@@ -312,6 +226,10 @@ renderables:
             properties:
               fluidAdditionalAttributes:
                 required: required
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '6'
             validators:
               -
                 identifier: NotEmpty
@@ -323,14 +241,43 @@ renderables:
             properties:
               fluidAdditionalAttributes:
                 required: required
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '6'
             validators:
               -
                 identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-4
-        label: 'Grid: Zeile'
-        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: address
+            label: Adresse
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '6'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: postcode
+            label: PLZ
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '2'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: city
+            label: Ort
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '4'
           -
             defaultValue: ''
             type: Email
@@ -339,6 +286,10 @@ renderables:
             properties:
               fluidAdditionalAttributes:
                 required: required
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '6'
             validators:
               -
                 identifier: EmailAddress
@@ -346,61 +297,57 @@ renderables:
                 identifier: NotEmpty
           -
             defaultValue: ''
-            type: Telephone
-            identifier: phone
-            label: Telefon
-            properties:
-              fluidAdditionalAttributes:
-                required: required
-            validators:
-              -
-                identifier: NotEmpty
-      -
-        type: GridRow
-        identifier: gridrow-5
-        label: 'Grid: Zeile'
-        renderables:
-          -
-            defaultValue: ''
-            type: Text
-            identifier: address
-            label: Adresse
-          -
-            defaultValue: ''
-            type: Text
-            identifier: postcode
-            label: PLZ
-          -
-            defaultValue: ''
-            type: Text
-            identifier: city
-            label: Ort
-          -
-            defaultValue: ''
             type: Text
             identifier: country
             label: Land
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '6'
       -
         type: GridRow
-        identifier: gridrow-6
+        identifier: gridrow-3
         label: 'Grid: Zeile'
         renderables:
           -
             defaultValue: ''
             type: Textarea
             identifier: comment
-            label: 'Was Sie uns sonst noch mitteilen wollen'
+            label: Kommentar
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
       -
         type: GridRow
-        identifier: gridrow-7
+        identifier: gridrow-4
         label: 'Grid: Zeile'
         renderables:
+          -
+            type: Checkbox
+            identifier: news
+            label: 'Bitte sendet mir zukünftig Informationen über Aktionen und News per E-Mail zu.'
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  md:
+                    numbersOfColumnsToUse: '12'
           -
             properties:
               pageUid: '4'
               linkText: Datenschutzerklärung
               fluidAdditionalAttributes:
                 required: required
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  md:
+                    numbersOfColumnsToUse: '12'
             type: LinkedCheckbox
             identifier: privacy
             label: 'Ich habe die %s zur Kenntnis genommen.'

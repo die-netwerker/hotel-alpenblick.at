@@ -16,3 +16,107 @@ module {
     }
   }
 }
+### Anfrage
+[traverse(page, "uid") == {$request_uid}]
+### page
+page {
+  includeCSS {
+    flatpickr = EXT:nw_template/Resources/Public/Css/flatpickr.min.css
+    form = EXT:nw_template/Resources/Public/Css/form.min.css
+  }
+  includeJSFooter {
+    flatpickr = EXT:nw_template/Resources/Public/JavaScript/flatpickr.min.js
+    form = EXT:nw_template/Resources/Public/JavaScript/jquery.form.min.js
+  }
+}
+### form
+plugin {
+  tx_form {
+    settings {
+      formDefinitionOverrides {
+        anfrage {
+          renderables {
+            0 {
+              renderables {
+                ### Zimmerauswahl
+                0.renderables {
+                  2 {
+                    defaultValue.0 = TEXT
+                    defaultValue.0.data = GP:room
+                  }
+                }
+                ### Datenschutz
+                3.renderables.1 {
+                  defaultValue = 0
+                  variants {
+                    privacy {
+                      identifier = privacy
+                      renderingOptions {
+                        enabled = 0
+                      }
+                      condition = finisherIdentifier in ["EmailToSender", "EmailToReceiver"]
+                    }
+                  }
+                }
+              }
+            }
+          }
+          finishers {
+            ### Empfänger
+            0 {
+              options {
+                subject = unverbindliche Anfrage - {$name}
+                senderName = {$name}
+                senderAddress = {$email}
+                translation {
+                  language = de
+                }
+                variables {
+                  url = {$base_url}
+                  adress = {$street}, {$postal_code} {$city}
+                  email = {$email}
+                  url = {$base_url}
+                  phone = {$phone}
+                  website = {$website}
+                }
+              }
+            }
+            ### Absender
+            1 {
+              options {
+                subject = COA
+                subject {
+                  10 = TEXT
+                  10.data = LLL:EXT:nw_template/Resources/Private/Form/Languages/form.xlf:form.mail_subject
+                  10.wrap = |
+                  20 = TEXT
+                  20.value = {$name}
+                  20.noTrimWrap = | - |
+                }
+                senderName = {$name}
+                senderAddress = {$email}
+                recipientAddress = {email}
+                translation {
+                  language = TEXT
+                  language.data = siteLanguage:typo3Language
+                }
+                variables {
+                  name = {$name}
+                  adress = {$street}, {$postal_code} {$city} 
+                  email = {$email}
+                  url = {$base_url}
+                  phone = {$phone}
+                  website = {$website}
+                  salutation = {salutation}
+                  vorname = {firstname}
+                  nachname = {lastname}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+[end]

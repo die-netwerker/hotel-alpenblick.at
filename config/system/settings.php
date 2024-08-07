@@ -98,6 +98,9 @@ return [
     'FE' => [
         'cacheHash' => [
             'enforceValidation' => true,
+            'excludedParameters' => [
+                'room',
+              ],
         ],
         'debug' => true,
         'disableNoCacheParameter' => true,
@@ -140,6 +143,9 @@ return [
         'transport_smtp_password' => '',
         'transport_smtp_server' => '',
         'transport_smtp_username' => '',
+        'layoutRootPaths' => [
+            '700' => 'EXT:nw_template/Resources/Private/Form/Layouts/',
+        ],
     ],
     'SYS' => [
         'UTF8filesystem' => true,

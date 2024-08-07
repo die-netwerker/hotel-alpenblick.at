@@ -185,7 +185,7 @@ page {
 
       email = {$email}
       phone = {$phone}
-
+      phonelink = {$phone_link}
       #latitude = {$latitude}
       #longitude = {$longitude}
 
