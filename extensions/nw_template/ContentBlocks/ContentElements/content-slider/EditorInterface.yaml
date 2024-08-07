@@ -37,6 +37,7 @@ fields:
           - identifier: image
             label: 'Bild'
             type: File
+            minitems: 2
   - identifier: palette_content-slider_settings
     type: Palette
     label: 'Einstellungen'

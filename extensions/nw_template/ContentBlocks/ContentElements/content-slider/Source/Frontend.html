@@ -53,24 +53,26 @@
                         </f:if>
                     </div>
                     <div class="content-right">
-                        <f:if condition="{contentslider.image.2}">
+                        <f:if condition="{contentslider.image.1}">
                             <picture>
-                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'710c', height:'400c', fileExtension:'webp')}, {f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'1420c', height:'800c', fileExtension:'webp')} 2x" width="710" height="400">
-                                <img src="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'710c', height:'400c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{contentslider.image.2}', treatIdAsReference:'true', width:'1420c', height:'800c', fileExtension:'webp')} 2x" width="710" height="400" alt="{contentslider.image.2.alternative}" title="{contentslider.image.2.title}" loading="lazy" />
+                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{contentslider.image.1}', treatIdAsReference:'true', width:'710c', height:'400c', fileExtension:'webp')}, {f:uri.image(image:'{contentslider.image.1}', treatIdAsReference:'true', width:'1420c', height:'800c', fileExtension:'webp')} 2x" width="710" height="400">
+                                <img src="{f:uri.image(image:'{contentslider.image.1}', treatIdAsReference:'true', width:'710c', height:'400c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{contentslider.image.1}', treatIdAsReference:'true', width:'1420c', height:'800c', fileExtension:'webp')} 2x" width="710" height="400" alt="{contentslider.image.1.alternative}" title="{contentslider.image.1.title}" loading="lazy" />
                             </picture> 
                         </f:if>
                         <div class="contentslider-text">
                             <f:if condition="{contentslider.subheader}"><p class="subheader">{contentslider.subheader}</p></f:if>
                             <f:if condition="{contentslider.text}"><p class="text">{contentslider.text -> f:format.nl2br()}</p></f:if>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.4 397.4">
-                            <defs>
-                                <pattern id="svgfill-{iterator.cycle}" width="397" height="397" patternUnits="userSpaceOnUse">
-                                    <image href="{f:uri.image(image:'{contentslider.image.3}', treatIdAsReference:'true', width:'794c', height:'794c', fileExtension:'webp')}" x="0" y="0" width="397" height="397" alt="{contentslider.image.3.alternative}" title="{contentslider.image.3.title}" />
-                                </pattern>
-                            </defs>
-                            <path d="M397.4,198.7c0-43.9-29.2-82.5-71.5-94.5v-32.7h-32.7C281.2,29.2,242.6,0,198.7,0c-43.9,0-82.5,29.2-94.5,71.5h-32.7v32.7C29.2,116.1,0,154.7,0,198.7c0,43.9,29.2,82.5,71.5,94.5v32.7h32.7c12,42.3,50.5,71.5,94.5,71.5,43.9,0,82.5-29.2,94.5-71.5h32.7v-32.7c42.3-12,71.5-50.5,71.5-94.5" fill="url(#svgfill-{iterator.cycle})"/>
-                        </svg>
+                        <f:if condition="{contentslider.image.3}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.4 397.4">
+                                <defs>
+                                    <pattern id="svgfill-{iterator.cycle}" width="397" height="397" patternUnits="userSpaceOnUse">
+                                        <image href="{f:uri.image(image:'{contentslider.image.3}', treatIdAsReference:'true', width:'794c', height:'794c', fileExtension:'webp')}" x="0" y="0" width="397" height="397" alt="{contentslider.image.3.alternative}" title="{contentslider.image.3.title}" />
+                                    </pattern>
+                                </defs>
+                                <path d="M397.4,198.7c0-43.9-29.2-82.5-71.5-94.5v-32.7h-32.7C281.2,29.2,242.6,0,198.7,0c-43.9,0-82.5,29.2-94.5,71.5h-32.7v32.7C29.2,116.1,0,154.7,0,198.7c0,43.9,29.2,82.5,71.5,94.5v32.7h32.7c12,42.3,50.5,71.5,94.5,71.5,43.9,0,82.5-29.2,94.5-71.5h32.7v-32.7c42.3-12,71.5-50.5,71.5-94.5" fill="url(#svgfill-{iterator.cycle})"/>
+                            </svg>
+                        </f:if>
                     </div>
                 </li>
             </f:for>
