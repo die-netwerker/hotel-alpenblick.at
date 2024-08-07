@@ -26,11 +26,12 @@ let departure = flatpickr('#main .departure', {
     monthSelectorType: 'static',
     disableMobile: true
 });
+var formid = $('form').attr('id');
 function adjustValueadults(value) {
-    const input = document.getElementById('anfrage-23-adults');
+    const input = document.getElementById(formid + '-adults');
     input.value = Number(input.value) + value;
 };
 function adjustValuechildren(value) {
-    const input = document.getElementById('anfrage-23-children');
+    const input = document.getElementById(formid + '-children');
     input.value = Number(input.value) + value;
 };
