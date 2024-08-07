@@ -10,7 +10,7 @@ finishers:
     options:
       subject: 'Anfrage Empfänger'
       recipients:
-        christoph@netwerk.at: ''
+        info@hotel-alpenblick.at: ''
       senderAddress: '{email}'
       senderName: '{salutation} {firstname} {lastname}'
       replyToRecipients:
@@ -40,7 +40,7 @@ finishers:
       subject: 'Anfrage Absender'
       recipients:
         '{email}': ''
-      senderAddress: christoph@netwerk.at
+      senderAddress: info@hotel-alpenblick.at
       senderName: ''
       addHtmlPart: true
       attachUploads: false
