@@ -31,8 +31,9 @@
         @include mixins.flexbox($j_content:flex-end, $f_direction:column);
         z-index: 2;
         h1, .netwerk_hero-header {
-            @include mixins.header($size:base.$fontsize_90, $color:base.$color_2, $line-height:1.2);
+            @include mixins.header($size:base.$fontsize_90, $line-height:1.2);
             text-align: center;
+            color: base.$color_2;
             & + svg {
                 margin-top: 20px;
             }
@@ -42,6 +43,9 @@
             height: 70px;
             fill: base.$color_2;
         }
+    }
+    @media (max-width: 1200px) {
+        height: calc(100vh - 98px - base.$margin_88);
     }
     @media (max-width: 1000px) {
         .netwerk_hero-content {

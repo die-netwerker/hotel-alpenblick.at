@@ -58,4 +58,17 @@
             @include mixins.button($margin_top: 20px)
         }
     }
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr 45%;
+        grid-template-rows: base.$margin_64 auto 1fr base.$margin_64 auto;
+        gap: 20px;
+    }
+    @media (max-width: 800px) {
+        grid-template-areas:
+            "img1 img2"
+            "text text"
+            "img4 img3";
+        grid-template-rows: auto;
+
+    }
 }

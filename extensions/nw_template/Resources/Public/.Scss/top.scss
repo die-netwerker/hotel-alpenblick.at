@@ -105,4 +105,36 @@
             column-gap: base.$margin_40;
         }
     }
+    @media (max-width: 1200px) {
+        &, &.sticky {
+            padding: 24px 4% 24px;
+            & + #main {
+                padding-top: 98px;
+            }
+        }
+        .logo {
+            svg {
+                height: 50px;
+            }
+        }
+        .topbuttons {
+            column-gap: 20px;
+        }
+    }
+    @media (max-width: 1000px) {
+        grid-template-areas: "logo right";
+        grid-template-columns: auto 1fr;
+        .info {
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        .topbuttons {
+            li {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
 }

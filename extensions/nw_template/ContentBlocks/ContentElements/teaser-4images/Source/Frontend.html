@@ -3,24 +3,28 @@
         <f:asset.css identifier="teaser4images" href="EXT:nw_template/Resources/Public/Css/teaser4images.min.css" />
         <f:if condition="{data.image.0}">
             <picture>
+                <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'385c', height:'285c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'770c', height:'570c', fileExtension:'webp')} 2x" width="385" height="285">
                 <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1160c', height:'860c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2320c', height:'1720c', fileExtension:'webp')} 2x" width="1160" height="860">
                 <img src="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1160c', height:'860c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'2320c', height:'1720c', fileExtension:'webp')} 2x" width="1160" height="860" alt="{data.image.0.alternative}" title="{data.image.0.title}" loading="lazy" />
             </picture>
         </f:if>
         <f:if condition="{data.image.1}">
             <picture>
+                <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'331c', height:'285c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'662c', height:'570c', fileExtension:'webp')} 2x" width="331" height="285">
                 <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'560c', height:'416c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'1120c', height:'832c', fileExtension:'webp')} 2x" width="560" height="416">
                 <img src="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'560c', height:'416c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.1}', treatIdAsReference:'true', width:'1120c', height:'832c', fileExtension:'webp')} 2x" width="560" height="416" alt="{data.image.1.alternative}" title="{data.image.1.title}" loading="lazy" />
             </picture>
         </f:if>
         <f:if condition="{data.image.2}">
             <picture>
+                <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'331c', height:'285c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'662c', height:'492c', fileExtension:'webp')} 2x" width="331" height="246">
                 <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'560c', height:'640c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'1120c', height:'1280c', fileExtension:'webp')} 2x" width="560" height="640">
                 <img src="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'560c', height:'640c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.2}', treatIdAsReference:'true', width:'1120c', height:'1280c', fileExtension:'webp')} 2x" width="560" height="640" alt="{data.image.2.alternative}" title="{data.image.2.title}" loading="lazy" />
             </picture>
         </f:if>
         <f:if condition="{data.image.3}">
             <picture>
+                <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'385c', height:'246c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'770c', height:'492c', fileExtension:'webp')} 2x" width="385" height="246">
                 <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'1025c', height:'655c', fileExtension:'webp')}, {f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'2050c', height:'1310c', fileExtension:'webp')} 2x" width="1025" height="655">
                 <img src="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'1025c', height:'655c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.3}', treatIdAsReference:'true', width:'2050c', height:'1310c', fileExtension:'webp')} 2x" width="1025" height="655" alt="{data.image.3.alternative}" title="{data.image.3.title}" loading="lazy" />
             </picture>

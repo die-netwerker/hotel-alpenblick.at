@@ -185,4 +185,114 @@ body {
             }
         }
     }
+    @media (max-width: 1400px) {
+        .diversity {
+            height: 100px;
+        }
+        .newsletter {
+            right: calc(100px + 4%);
+            width: 220px;
+            height: 220px;
+        }
+    }
+    @media (max-width: 1200px) {
+        grid-template-areas:
+            "news news news"
+            "logo address links"
+            "logo address socials"
+            "slogan slogan diversity"
+            "bottom bottom bottom";
+        column-gap: base.$margin_88;
+        grid-template-columns: auto 1fr auto;
+        .logo {
+            width: 270px;
+        }
+        .slogan {
+            margin-top: base.$margin_64;
+        }
+        .diversity {
+            margin-top: base.$margin_64;
+            align-self: center;
+        }
+        .newsletter {
+            grid-area: news;
+            position: relative;
+            border-radius: unset;
+            right: unset;
+            top: unset;
+            width: unset;
+            height: unset;
+            transform: unset;
+            margin-bottom: base.$margin_64;
+        }
+    }
+    @media (max-width: 1000px) {
+        .logo {
+            width: 200px;
+        }
+    }
+    @media (max-width: 800px) {
+        grid-template-areas:
+            "news news"
+            "logo address"
+            "links links"
+            "socials socials"
+            "slogan diversity"
+            "bottom bottom";
+        grid-template-columns: 1fr auto;
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: base.$margin_64;
+            column-gap: 10px;
+            li + li {
+                margin-top: unset;
+            }
+        }
+        .socials {
+            justify-content: center;
+        }
+    }
+    @media (max-width: 600px) {
+        grid-template-areas:
+            "news"
+            "logo"
+            "address"
+            "links"
+            "socials"
+            "diversity"
+            "slogan"
+            "bottom";
+        grid-template-columns: 1fr;
+        .logo {
+            justify-self: center;
+        }
+        .address {
+            text-align: center;
+            margin-top: base.$margin_64;
+        }
+        .slogan {
+            text-align: center;
+        }
+        .diversity {
+            justify-self: center;
+        }
+        .footer {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 16px;
+            li {
+                text-align: center;
+                &:first-child {
+                    width: 100%;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
 }

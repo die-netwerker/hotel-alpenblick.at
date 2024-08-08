@@ -26,18 +26,6 @@
             flex-direction: column;
             justify-content: flex-end;
             height: 100%;
-            /*&.netwerk_teaser-sizer, &.netwerk_teaser-item {
-                width: calc((100% - 72px) / 3);
-            }
-            &.netwerk_teaser-gutter {
-                width: 36px;
-            }
-            &:nth-child(4) {
-                padding-top: base.$margin_150;
-            }
-            &:nth-child(5) {
-                padding-top: calc(base.$margin_150 * 2);
-            }*/
             &:nth-child(1) {
                 grid-area: t1;
             }
@@ -102,5 +90,82 @@
     img {
         width: 100%;
         height: auto;
+    }
+    @media (max-width:1200px) {
+        ul {
+            grid-template-rows: auto base.$margin_100 base.$margin_100 auto base.$margin_100 base.$margin_100;
+            li {
+                &:nth-child(2) {
+                    padding-top: base.$margin_100;
+                }
+                &:nth-child(3) {
+                    padding-top: calc(base.$margin_100 * 2);
+                }
+            }
+        }
+    }
+    @media (max-width:1200px) {
+        ul {
+            grid-template-areas: 
+                "t1 t2 t3"
+                "t4 t5 t6";
+            grid-template-rows: auto;
+            column-gap: 20px;
+            li {
+                &:nth-child(2) {
+                    padding-top: unset;
+                }
+                &:nth-child(3) {
+                    padding-top: unset;
+                }
+                &:nth-child(3n + 2), &:nth-child(3n + 3) {
+                    &::before {
+                        left: -10px;
+                    }
+                }
+            }
+        }
+        .teaser-content {
+            p {
+                min-height: unset;
+            }
+        }
+    }
+    @media (max-width:900px) {
+        ul {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: 
+                "t1 t2"
+                "t3 t4"
+                "t5 t6";
+            li {
+                &:nth-child(3n + 2), &:nth-child(3n + 3) {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+    }
+    @media (max-width:600px) {
+        ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: unset;
+        }
+        .teaser-content {
+            justify-content: space-between;
+            p {
+                writing-mode: horizontal-tb;
+                rotate: unset;
+            }
+            svg {
+                height: 30px;
+                rotate: unset;
+                transform: unset;
+            }
+        }
     }
 }

@@ -6,7 +6,9 @@
                 <li>
                     <f:if condition="{roomteaser.image}">
                         <picture>
-                            <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'830c', height:'530c', fileExtension:'webp')}, {f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'1660c', height:'1060c', fileExtension:'webp')} 2x" width="830" height="530">
+                            <source media="(max-width: 430px)" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'396c', height:'253c', fileExtension:'webp')}, {f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'792c', height:'506c', fileExtension:'webp')} 2x" width="396" height="253">
+                            <source media="(max-width: 800px)" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'736c', height:'470c', fileExtension:'webp')}, {f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'1472c', height:'940c', fileExtension:'webp')} 2x" width="736" height="470">
+                            <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'542c', height:'346c', fileExtension:'webp')}, {f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'1084c', height:'692c', fileExtension:'webp')} 2x" width="542" height="346">
                             <img src="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'830c', height:'530c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{roomteaser.image.0}', treatIdAsReference:'true', width:'1660c', height:'1060c', fileExtension:'webp')} 2x" width="830" height="530" alt="{roomteaser.image.0.alternative}" title="{roomteaser.image.0.title}" loading="lazy" />
                         </picture> 
                     </f:if>
