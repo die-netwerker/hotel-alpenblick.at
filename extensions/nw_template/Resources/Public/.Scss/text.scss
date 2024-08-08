@@ -1,0 +1,68 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_text {
+    width: 100%;
+    &.frame-background-1 {
+        background: base.$color_3;
+        color: base.$color_2;
+        p, ul:not(.buttons) {
+            a {
+                color: base.$color_2;
+            }
+        }
+        .buttons {
+            li {
+                a {
+                    border-color: base.$color_2;
+                    color: base.$color_2;
+                }
+            }
+        }
+    }
+    &.frame-background-2 {
+        background: #fff;
+    }
+    .content {
+        @extend %frame_1455;
+        margin: 0 auto
+    }
+    header {
+        p {
+            @include mixins.subheader();
+            text-transform: uppercase;
+            font-family: base.$font_2;
+        }
+        h1, h2, h3 {
+            @include mixins.header();
+        }
+        h3 {
+            font-size: base.$fontsize_40;
+        }
+        & + p {
+            margin-top: 20px
+        }
+        &.center {
+            text-align: center
+        }
+    }
+    p, ul:not(.buttons) {
+        @include mixins.bodytext();
+        font-family: base.$font_2;
+        &.text-center {
+            text-align: center;
+        }
+    }
+    ul:not(.buttons) {
+        margin-left: 1.2em;
+    }
+    .buttons {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 30px;
+        li {
+            @include mixins.button($margin_top: 30px)
+        }
+    }
+}

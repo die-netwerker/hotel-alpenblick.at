@@ -1,0 +1,65 @@
+name: netwerk/text
+typeName: netwerk_text
+title: 'Text'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: palette_text_content
+    type: Palette
+    label: 'Inhalt'
+    fields:
+      - identifier: subheader
+        useExistingField: true
+        label: 'Überüberschrift'
+      - type: Linebreak
+      - identifier: header
+        type: Textarea
+        label: 'Überschrift'
+        rows: 2
+      - type: Linebreak
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
+      - type: Linebreak
+      - identifier: bodytext
+        useExistingField: true
+        enableRichtext: true
+  - identifier: buttons
+    type: Collection
+    label: 'Buttons'
+    labelField: label
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: palette_text_button
+        type: Palette
+        label: 'Button'
+        fields:
+          - identifier: label
+            type: Text
+            label: 'Beschriftung'
+            placeholder: 'Mehr erfahren'
+          - identifier: typolink
+            type: Link
+            label: 'Link'
+  - identifier: palette_text_settings
+    type: Palette
+    label: 'Einstellungen'
+    fields:
+      - identifier: select_background
+        type: Select
+        renderType: selectSingle
+        label: 'Hintergrund'
+        items:
+          - label: 'Ohne'
+            value: '0'
+          - label: 'Terracotta'
+            value: '1'
+          - label: 'Weiß'
+            value: '2'
+          
