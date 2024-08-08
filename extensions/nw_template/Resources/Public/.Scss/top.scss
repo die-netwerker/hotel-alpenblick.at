@@ -20,6 +20,12 @@
                 height: 50px;
             }
         }
+        & + #main {
+            padding-top: 98px;
+        }
+    }
+    & + #main {
+        padding-top: 133px;
     }
     ul {
         list-style: none;
