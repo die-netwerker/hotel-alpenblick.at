@@ -130,11 +130,7 @@
     }
     @media (max-width: 600px) {
         .topbuttons {
-            li {
-                &:first-child {
-                    display: none;
-                }
-            }
+            display: none;
         }
     }
 }
