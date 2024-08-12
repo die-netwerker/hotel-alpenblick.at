@@ -60,6 +60,13 @@
             justify-content: flex-start;
             padding-top: 100px;
             picture {
+                &:nth-child(1) {
+                    height: 100%;
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
                 &:nth-child(2) {
                     position: absolute;
                     transform: translateY(-50%);
@@ -82,6 +89,7 @@
                 "img1 img1"
                 "text img2";
             position: relative;
+            row-gap: 20px;
             picture {
                 padding-right: 100px;
                 grid-area: img1;
@@ -103,8 +111,8 @@
         }
         svg {
             grid-area: img2;
-            width: 397px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 397px;
             position: absolute;
             right: 0;
             transform: translateY(-50%);
@@ -124,6 +132,97 @@
             cursor: pointer;
             &.active {
                 background-color: base.$color_1;
+            }
+        }
+    }
+    @media (max-width: 1400px) {
+        .keen-slider {
+            .content-right {
+                grid-template-columns: 62% 1fr;
+            }
+        }
+    }
+    @media (max-width: 1200px) {
+        padding-right: 4%;
+        .keen-slider {
+            .content-right {
+                grid-template-columns: 67% 1fr;
+                picture {
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        .keen-slider {
+            li {
+                grid-template-columns: 100%;
+                grid-template-areas:
+                    "header"
+                    "left"
+                    "right";
+            }
+            h2 {
+                padding-left: unset;
+                text-align: center;
+            }
+            .media-left {
+                padding-top: unset;
+                picture {
+                    &:nth-child(2) {
+                        top: unset;
+                        bottom: 0;
+                        transform: translateY(50%);
+                        width: 20%;
+                    }
+                }
+            }
+            .content-right {
+                margin-top: base.$margin_64;
+                grid-template-areas:
+                    "text img1"
+                    "text img2";
+                grid-template-columns: 40% 1fr;
+                row-gap: unset;
+                padding-bottom: 110px;
+                column-gap: 20px;
+                svg {
+                    width: 40%;
+                    right: 42px;
+                }
+            }
+        }
+    }
+    @media(max-width: 800px) {
+        .keen-slider {
+            .media-left {
+                picture {
+                    &:nth-child(2) {
+                        bottom: 20px;
+                        left: 20px;
+                        width: 30%;
+                        transform: unset;
+                    }
+                }
+            }
+            .content-right {
+                padding-bottom: unset;
+                svg {
+                    right: 20px;
+                    bottom: 20px;
+                    transform: unset;
+                }
+            }
+        }
+    }
+    @media(max-width: 600px) {
+        .keen-slider {
+            .content-right {
+                grid-template-areas:
+                    "text"
+                    "img1";
+                grid-template-columns: 100%;
+                row-gap: base.$margin_64;
             }
         }
     }

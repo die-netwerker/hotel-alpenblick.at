@@ -40,13 +40,36 @@
     .image-right {
         grid-area: i1;
         height: auto;
-        width: 352px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 352px;
     }
     .image-left {
         grid-area: i2;
         height: auto;
-        width: 507px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 507px;
+    }
+    @media (max-width: 800px) {
+        grid-template-columns: 4% 1fr 1fr 4%;
+        grid-template-areas: 
+            ". tl tl ."
+            ". tm tm ."
+            ". tr tr . "
+            ". h1 h1 ."
+            ". i1 i2 . ";
+        row-gap: unset;
+        column-gap: 20px;
+        p {
+            &.text-left, &.text-middle, &.text-right {
+                justify-self: center;
+                text-align: center;
+            }
+        }
+        .header {
+            margin-top: base.$margin_64;
+            margin-bottom: base.$margin_64;
+            justify-self: center;
+            text-align: center;
+        }
     }
 }

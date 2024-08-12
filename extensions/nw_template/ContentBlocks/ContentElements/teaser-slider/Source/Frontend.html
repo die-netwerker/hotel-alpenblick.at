@@ -41,7 +41,8 @@
                     <li class="keen-slider__slide">
                         <f:if condition="{teaserslider.image}">
                             <picture>
-                                <source media="(max-width: 1200px)" srcset="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'710c', height:'710c', fileExtension:'webp')}, {f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'1400c', height:'1400c', fileExtension:'webp')} 2x" width="710" height="710">
+                                <source media="(max-width: 430px)" srcset="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'396c', height:'235c', fileExtension:'webp')}, {f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'792c', height:'470c', fileExtension:'webp')} 2x" width="396" height="235">
+                                <source media="(max-width: 1100px)" srcset="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'1012c', height:'600c', fileExtension:'webp')}, {f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'2024c', height:'1200c', fileExtension:'webp')} 2x" width="1012" height="600">
                                 <img src="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'710c', height:'710c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{teaserslider.image.0}', treatIdAsReference:'true', width:'1400c', height:'1400c', fileExtension:'webp')} 2x" width="710" height="710" alt="{teaserslider.image.0.alternative}" title="{teaserslider.image.0.title}" loading="lazy" />
                             </picture> 
                         </f:if>

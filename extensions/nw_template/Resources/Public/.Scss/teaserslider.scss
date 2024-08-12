@@ -43,6 +43,7 @@
     .content {
         @include mixins.flexbox($j_content:flex-start, $f_direction:column);
         @extend %frame_1455;
+        width: 92%;
     }
     h2 {
         @include mixins.header($size:base.$fontsize_170, $line-height:1.2);
@@ -58,7 +59,8 @@
         }
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
         .teaserslider-text {
             align-self: flex-end;
@@ -118,5 +120,45 @@
         text-decoration: none;
         color: base.$color_1;
         border-bottom: 2px solid base.$color_1;
+    }
+    @media(max-width:1200px) {
+        h2 {
+            transform: unset;
+            margin-bottom: 20px;
+        }
+        .keen-slider {
+            .teaserslider-text {
+                padding-bottom: unset;
+                align-self: center;
+                .buttons {
+                    column-gap: 20px;
+                }
+            }
+        }
+    }
+    @media(max-width:1100px) {
+        .keen-slider {
+            li {
+                grid-template-columns: 100%;
+            }
+            .teaserslider-text {
+                margin-top: base.$margin_40;
+            }
+        }
+    }
+    @media(max-width:600px) {
+        .keen-slider {
+            .teaserslider-text {
+                .buttons {
+                    flex-direction: column;
+                    row-gap: 10px;
+                    flex-wrap: wrap;
+                    a {
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
