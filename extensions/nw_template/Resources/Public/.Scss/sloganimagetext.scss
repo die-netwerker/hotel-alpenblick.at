@@ -41,6 +41,9 @@
         p {
             @include mixins.bodytext();
             font-family: base.$font_2;
+            &.button {
+                @include mixins.button($margin_top: 30px)
+            }
         }
     }
     @media (max-width: 1300px) {

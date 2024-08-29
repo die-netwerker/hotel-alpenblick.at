@@ -29,3 +29,14 @@ fields:
       - identifier: bodytext
         useExistingField: true
         enableRichtext: true
+  - identifier: palette_slogan-image-text__button
+    type: Palette
+    label: 'Button'
+    fields:
+      - identifier: button_label
+        type: Text
+        label: 'Beschriftung'
+        placeholder: 'Mehr erfahren'
+      - identifier: button_typolink
+        type: Link
+        label: 'Link'

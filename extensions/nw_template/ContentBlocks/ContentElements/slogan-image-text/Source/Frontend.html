@@ -18,6 +18,16 @@
                 <f:if condition="{data.bodytext}">
                     {data.bodytext -> f:format.html()}
                 </f:if>
+                <f:if condition="{data.button_label} || {data.button_typolink}">
+                    <p class="button">
+                        <f:link.typolink parameter="{data.button_typolink}">
+                            <f:if condition="{data.button_label}">
+                                <f:then>{data.button_label}</f:then>
+                                <f:else>{f:translate(key:'LLL:EXT:nw_template/Resources/Private/Languages/lang.xlf:learn_more') -> f:format.raw()}</f:else>
+                            </f:if>
+                        </f:link.typolink>
+                    </p>
+                </f:if>
             </div>
         </f:if>
     </div>
