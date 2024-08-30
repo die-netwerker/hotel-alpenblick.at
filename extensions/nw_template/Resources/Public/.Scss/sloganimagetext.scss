@@ -38,12 +38,15 @@
                 margin-top: 20px
             }
         }
-        p {
+        p, ul {
             @include mixins.bodytext();
             font-family: base.$font_2;
             &.button {
                 @include mixins.button($margin_top: 30px)
             }
+        }
+        ul {
+            margin-left: 1.2em;
         }
     }
     @media (max-width: 1300px) {

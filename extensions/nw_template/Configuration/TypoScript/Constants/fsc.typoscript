@@ -1,7 +1,7 @@
 styles {
   templates {
-    layoutRootPath = EXT:nw_template/Resources/Private/Layouts/FluidStyleContent/
-    templateRootPath = EXT:nw_template/Resources/Private/Templates/FluidStyleContent/
-    partialRootPath = EXT:nw_template/Resources/Private/Partials/FluidStyleContent/
+    layoutRootPath = EXT:nw_template/Resources/Private/FluidStyleContent/Layouts/
+    templateRootPath = EXT:nw_template/Resources/Private/FluidStyleContent/Templates/
+    partialRootPath = EXT:nw_template/Resources/Private/FluidStyleContent/Partials/
   }
 }

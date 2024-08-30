@@ -1,0 +1,30 @@
+@use 'base';
+@use 'mixins';
+.frame-type-menu_sitemap {
+    @extend %frame_1160;
+    ul {
+        list-style: none;
+        a {
+            display: inline-block;
+            width: 100%;
+            @include mixins.text();
+            text-align: center;
+            text-decoration: unset;
+            color: base.$color_1;
+            font-family: base.$font_2;
+        }
+    }
+    & > ul {
+        & > li {
+            & + li {
+                margin-top: 30px;
+            }
+            & > a {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: base.$fontsize_24;
+                font-family: base.$font_1;
+            }
+        }
+    }
+}
