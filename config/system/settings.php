@@ -30,13 +30,13 @@ return [
     ],
     'EXTENSIONS' => [
         'backend' => [
-            'backendFavicon' => '',
-            'backendLogo' => '',
+            'backendFavicon' => 'EXT:nw_template/Resources/Public/Icons/favicon.ico',
+            'backendLogo' => 'EXT:nw_template/Resources/Public/Images/backend_logo-white.svg',
             'loginBackgroundImage' => '',
             'loginFootnote' => '',
-            'loginHighlightColor' => '',
-            'loginLogo' => '',
-            'loginLogoAlt' => '',
+            'loginHighlightColor' => '#534743',
+            'loginLogo' => 'EXT:nw_template/Resources/Public/Images/backend_logo.svg',
+            'loginLogoAlt' => 'hotel-alpenblick.at',
         ],
         'cs_seo' => [
             'cropDescription' => '0',
