@@ -22,7 +22,16 @@ fields:
         rows: 2
       - identifier: slogan_h1
         type: Checkbox
-        label: 'Slogan ist H1'
+        label: 'Slogan ist H1 (Bitte beachte: Entweder Slogan oder Text)'
+        renderType: checkboxToggle
+        default: 0
+      - type: Linebreak
+      - identifier: hero_text
+        type: Text
+        label: 'Text'
+      - identifier: text_h1
+        type: Checkbox
+        label: 'Text ist H1 (Bitte beachte: Entweder Slogan oder Text)'
         renderType: checkboxToggle
         default: 0
       - type: Linebreak

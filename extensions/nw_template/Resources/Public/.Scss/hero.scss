@@ -30,8 +30,21 @@
         left: 8%;
         @include mixins.flexbox($j_content:flex-end, $f_direction:column);
         z-index: 2;
-        h1, .netwerk_hero-header {
+        .netwerk_hero-slogan {
             @include mixins.header($size:base.$fontsize_90, $line-height:1.2);
+            text-align: center;
+            color: base.$color_2;
+            & + svg, & + .netwerk_hero-text {
+                margin-top: 20px;
+            }
+        }
+        .netwerk_hero-text {
+            font-family: base.$font_2;
+            font-size: base.$fontsize_28;
+            line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: 0.9px;
+            text-transform: uppercase;
             text-align: center;
             color: base.$color_2;
             & + svg {

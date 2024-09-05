@@ -10,12 +10,18 @@
                 <img src="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'1776c', height:'900c', fileExtension:'webp')}" srcset="{f:uri.image(image:'{data.image.0}', treatIdAsReference:'true', width:'3552c', height:'1800c', fileExtension:'webp')} 2x" width="1776" height="900" alt="{data.image.0.alternative}" title="{data.image.0.title}" />
             </picture>
         </f:if>
-        <f:if condition="{data.header} || {data.svg}">
+        <f:if condition="{data.header} || {data.hero_text} || {data.svg}">
             <div class="{data.CType}-content">
                 <f:if condition="{data.header}">
                     <f:if condition="{data.slogan_h1}">
-                        <f:then><h1>{data.header -> f:format.nl2br()}</h1></f:then>
-                        <f:else><p class="{data.CType}-header">{data.header -> f:format.nl2br()}</p></f:else>
+                        <f:then><h1 class="{data.CType}-slogan">{data.header -> f:format.nl2br()}</h1></f:then>
+                        <f:else><p class="{data.CType}-slogan">{data.header -> f:format.nl2br()}</p></f:else>
+                    </f:if>
+                </f:if>
+                <f:if condition="{data.hero_text}">
+                    <f:if condition="{data.text_h1}">
+                        <f:then><h1 class="{data.CType}-text">{data.hero_text}</h1></f:then>
+                        <f:else><p class="{data.CType}-text">{data.hero_text}</p></f:else>
                     </f:if>
                 </f:if>
                 <f:if condition="{data.svg}">
