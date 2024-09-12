@@ -12,7 +12,6 @@ import('.hosts.yaml');
  * Config
  */
 set('typo3_webroot', 'public');
-//set('repository', 'git@github.com:die-netwerker/metzgerwirt-zillertal.at.git');
 set('keep_releases', '3');
 set('writable_mode', 'chmod');
 
@@ -62,15 +61,15 @@ desc('Deploys your project');
 task('deploy', [
     'deploy:prepare',
     'deploy:vendors',
-    /*'typo3:fix_folder_structure',
-    'typo3:language_update',*/
+    'typo3:fix_folder_structure',
+    'typo3:language_update',
     'deploy:symlink',
-    /*'typo3:extension_setup',
+    'typo3:extension_setup',
     'typo3:update_database',
     'typo3:upgrade_all',
     'typo3:cache_flush',
     'typo3:cache_warmup',
-    'typo3:update_referenceindex',*/
+    'typo3:update_referenceindex',
     'deploy:unlock',
     'deploy:cleanup',
     'deploy:success',
