@@ -1,0 +1,41 @@
+name: netwerk/accordion
+typeName: netwerk_accordion
+title: 'Akkordeon'
+group: common
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: palette_accordion_header
+    type: Palette
+    label: 'Überschrift'
+    fields:
+      - identifier: subheader
+        useExistingField: true
+        label: 'Überüberschrift'
+      - type: Linebreak
+      - identifier: header
+        type: Textarea
+        label: 'Überschrift'
+        rows: 2
+      - type: Linebreak
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
+  - identifier: accordion
+    type: Collection
+    label: 'Akkordeon Element'
+    labelField: accordion_header
+    appearance:
+      collapseAll: true
+      levelLinksPosition: bottom
+    fields:
+      - identifier: accordion_header
+        label: 'Überschrift'
+        type: Text
+      - identifier: accordion_text
+        type: Textarea
+        enableRichtext: true
+        label: 'Text'

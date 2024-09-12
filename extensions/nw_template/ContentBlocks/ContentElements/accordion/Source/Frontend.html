@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="frame-type-{data.CType}{f:if(condition:'{data.space_before_class}', then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}', then:' frame-space-after-{data.space_after_class}')}">
+        <f:asset.css identifier="accordion" href="EXT:nw_template/Resources/Public/Css/accordion.min.css" />
+        <f:asset.script identifier="accordion">
+            const accordionTitles = document.querySelectorAll('.frame-type-netwerk_accordion ul .accordion-header');
+            accordionTitles.forEach((accordionTitle) => {
+                accordionTitle.addEventListener('click', () => {
+                    if (accordionTitle.parentElement.classList.contains('open')) {
+                        accordionTitle.parentElement.classList.remove('open');
+                    } else {
+                        const accordionTitlesWithIsOpen = document.querySelectorAll('.open');
+                        accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+                            accordionTitleWithIsOpen.classList.remove('open');
+                        });
+                        accordionTitle.parentElement.classList.add('open');
+                    }
+                });
+            });
+        </f:asset.script>
+        <f:if condition="{data.header} || {data.subheader}">
+            <header class="{data.header_position}">
+                <f:if condition="{data.subheader}"><p>{data.subheader}</p></f:if>
+                <f:if condition="{data.header}">
+                    <f:switch expression="{data.header_layout}">
+                        <f:case value="1"><h1>{data.header -> f:format.nl2br()}</h1></f:case>
+                        <f:case value="2"><h2>{data.header -> f:format.nl2br()}</h2></f:case>
+                        <f:case value="3"><h3>{data.header -> f:format.nl2br()}</h3></f:case>
+                    </f:switch>
+                </f:if>
+            </header>
+        </f:if>
+        <f:if condition="{data.accordion}">
+            <ul>
+                <f:for each="{data.accordion}" as="accordion">
+                    <li>
+                        <f:if condition="{accordion.accordion_header}">
+                            <p class="accordion-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 45"><path d="M95.5,45H22.5C10.1,45,0,34.9,0,22.5S10.1,0,22.5,0h73c12.4,0,22.5,10.1,22.5,22.5s-10.1,22.5-22.5,22.5ZM22.5,2C11.2,2,2,11.2,2,22.5s9.2,20.5,20.5,20.5h73c11.3,0,20.5-9.2,20.5-20.5S106.8,2,95.5,2H22.5Z"/><path d="M86.3,36.2c0-3.7,1.3-7.5,5.5-12.2H21c-2.2,0-1.7,1.6-3.7,1.6s-2.3-1.4-2.3-2.9.8-2.9,2.3-2.9,1.5,1.6,3.7,1.6h70.8c-4.2-4.7-5.5-8.6-5.5-12.2s.2-2,.7-2,.7.6,1.1,1.7c2.5,6,8.3,11.3,14.8,12.3,1.3.2,1.8.8,1.8,1.6s-.5,1.3-1.8,1.6c-6.5,1-12.3,6.3-14.8,12.3-.5,1.1-.7,1.7-1.1,1.7s-.7-.6-.7-2"/></svg>{accordion.accordion_header}</p>
+                        </f:if>
+                        <f:if condition="{accordion.accordion_text}">
+                            <div class="accordion-content">{accordion.accordion_text -> f:format.html()}</div>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</html>

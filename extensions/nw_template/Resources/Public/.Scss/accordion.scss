@@ -1,0 +1,65 @@
+@use 'base';
+@use 'mixins';
+.frame-type-netwerk_accordion {
+    @extend %frame_1455;
+    header {
+        p {
+            @include mixins.subheader();
+            text-transform: uppercase;
+            font-family: base.$font_2;
+        }
+        h1, h2, h3 {
+            @include mixins.header();
+        }
+        h3 {
+            font-size: base.$fontsize_40;
+        }
+        & + ul {
+            margin-top: 20px
+        }
+        &.center {
+            text-align: center
+        }
+    }
+    & > ul {
+        list-style: none;
+        & > li {
+            & + li {
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid base.$color_1
+            }
+            & > p {
+                @include mixins.header($size:base.$fontsize_40);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                column-gap: 20px;
+                svg {
+                    fill: base.$color_1;
+                    height: 30px;
+                    width: auto;
+                }
+            }
+            .accordion-content {
+                display: none;
+                margin-top: 16px;
+                p, ul:not(.buttons) {
+                    @include mixins.bodytext();
+                    font-family: base.$font_2;
+                    &.text-center {
+                        text-align: center;
+                    }
+                }
+                ul:not(.buttons) {
+                    margin-left: 1.2em;
+                }
+            }
+            &.open {
+                .accordion-content {
+                    display: block
+                }
+            }
+        }
+    }
+}
