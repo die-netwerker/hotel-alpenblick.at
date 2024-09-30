@@ -1,0 +1,5 @@
+plugin.tx_felogin_login {
+    view {
+        templateRootPath = EXT:nw_template/Resources/Private/Login/Templates/
+    }
+}

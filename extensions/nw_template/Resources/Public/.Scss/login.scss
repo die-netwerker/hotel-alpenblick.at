@@ -1,0 +1,80 @@
+@use 'base';
+@use 'mixins';
+.frame-type-felogin_login {
+    width: 100%;
+    form {
+        @extend %frame_1160;
+        margin: 0 auto;
+        fieldset {
+            appearance: none;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 30px;
+            row-gap: base.$margin_40;
+            padding: base.$margin_40;
+            border: none;
+            & > div {
+                width: calc((100% - 30px) / 2);
+                &.logout {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 20px;
+                    appearance: unset;
+                    border: unset;
+                    border-bottom: 1px solid base.$color_1;
+                    border-radius: 0;
+                    background-color: transparent;
+                    display: inline-block;
+                    width: 100%;
+                    color: #7E7D7D;
+                    font-size: base.$fontsize_20;
+                    font-family: base.$font_1;
+                    line-height: 1.2;
+                    letter-spacing: 0.5px;
+                }
+                &.felogin-hidden {
+                    display: none;
+                }
+            }
+            background: #fff
+        }
+    }
+    label {
+        @include mixins.subheader();
+        text-transform: uppercase;
+        font-family: base.$font_2;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    input:not([type="checkbox"], [type="radio"], [type="submit"]), select, textarea {
+        appearance: unset;
+        border: unset;
+        border-bottom: 1px solid base.$color_1;
+        border-radius: 0;
+        background-color: transparent;
+        display: inline-block;
+        width: 100%;
+        color: #7E7D7D;
+        font-size: base.$fontsize_20;
+        font-family: base.$font_1;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+    }
+    input[type="submit"] {
+        display: inline-block;
+		font-weight: 400;
+		font-size: base.$fontsize_20;
+        font-family: base.$font_1;
+		line-height: 1.2;
+		color: base.$color_1;
+		border: 2px solid base.$color_1;
+		text-transform: uppercase;
+		letter-spacing: .5px;
+		text-decoration: unset;
+		padding: 6px 15px;
+		background-color: transparent;
+		border-radius: 100px;
+        cursor: pointer;
+    }
+}
