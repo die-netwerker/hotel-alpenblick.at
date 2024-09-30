@@ -108,6 +108,7 @@ return [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
         ],
+        'passwordPolicy' => 'simple',
     ],
     'GFX' => [
         'gdlib_png' => true,

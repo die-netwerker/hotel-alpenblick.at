@@ -20,6 +20,20 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['filefill']['storages'][1] = [
         'configuration' => 'https://alpenblick.netwerk.guru',
     ],
 ];
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['passwordPolicies'] = [
+    'simple' => [
+        'validators' => [
+            \TYPO3\CMS\Core\PasswordPolicy\Validator\CorePasswordValidator::class => [
+                'options' => [
+                    'minimumLength' => 4,
+                    'upperCaseCharacterRequired' => false,
+                    'digitCharacterRequired' => false,
+                    'specialCharacterRequired' => false,
+                ],
+            ],
+        ],
+    ],
+];
 
 /**
  * Allow backend users to drag and drop the new page type
